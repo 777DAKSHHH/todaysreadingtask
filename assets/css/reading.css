@@ -1,0 +1,76 @@
+/* Reading Page Specific Styles */
+
+.reading-test {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.reading-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+/* Desktop: Independent scrolling for passage and questions */
+@media (min-width: 992px) {
+  .passage-box, .questions-box {
+    height: 75vh; /* Viewport height minus header */
+    overflow-y: auto;
+    position: sticky;
+    top: 100px; /* Offset for sticky header */
+  }
+}
+
+.question-item {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.question-item:last-child {
+  border-bottom: none;
+}
+
+.question-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* --- Design Enhancements --- */
+
+.passage-highlight {
+  background-color: #fff3cd; /* Bootstrap's warning-bg-subtle */
+  border-radius: 3px;
+  padding: 0 4px;
+  transition: background-color 0.3s ease;
+  scroll-margin-top: 100px; /* Offset for scroll-into-view */
+}
+
+.question-btn.answered, .question-link.answered {
+  background-color: #d1e7dd; /* success-bg-subtle */
+  border-color: #a3cfbb; /* success-border-subtle */
+  color: #0a3622; /* success-text-emphasis */
+}
+
+.question-link {
+  font-weight: bold;
+  text-decoration: none;
+  vertical-align: baseline;
+  display: inline-block;
+  padding: 0 2px !important;
+  line-height: 1;
+}
+
+.question-link.answered {
+  color: #0a3622 !important; /* success-text-emphasis */
+  border-radius: 3px;
+}
