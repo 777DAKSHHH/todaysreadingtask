@@ -1,174 +1,462 @@
-const readingAnswers = {
+const readingData = {
   "1": {
-    "answer": "ii",
-    "explanation": "Paragraph A describes how local pressure groups in Portland, Oregon, forced a referendum to spend federal money on a light rail system instead of a new road, which is a clear example of 'people power' leading to a change in transport policy.",
-    "ref": "q1-ref"
+    "explanation": `Question no. 1: Paragraph A
+
+The first lines talk about politics (people power), “In fact, Newman believes the main reason for adopting one sort of transport over another is politics: ‘The more democratic the process, the more public transport is favored.’ .. .”
+
+Then the writer explains how a project became successful due to politics, “ . .. . Some years ago, federal money was granted to build a new road. However, local pressure groups forced a referendum over whether to spend the money on light rail instead. The rail proposal won and the railway worked spectacularly well.”
+
+Here, politics & democratic process indicates to people power.
+
+So, the answer is: ii (A successful exercise in people power)`
   },
   "2": {
-    "answer": "vii",
-    "explanation": "Paragraph B explains that while trains and cars initially maintained stable travel times in the UK, the failure of infrastructure to keep up with urban sprawl led to 'massive congestion problems which now make commuting times far higher'.",
-    "ref": "q2-ref"
+    "explanation": `Question no. 2: Paragraph B
+
+The answer can be found in the first and last lines of paragraph B.
+
+At the beginning the writer says in line no. 1, “In the UK, travel times to work had been stable for at least six centuries, .. .. .”
+
+Then, in the last lines the writer says, “ .. . .. However, public infrastructure did not keep pace with urban sprawl, causing massive congestion problems which now make commuting times far higher.”
+
+Here, commuting times far higher = an increase in travelling time.
+
+So, the answer is: vii (Increases in travelling time)`
   },
   "3": {
-    "answer": "iv",
-    "explanation": "Paragraph C directly refutes the belief that wealth leads to more car use, citing European cities like Stockholm where 'car use has actually fallen in recent years as the city has become larger and wealthier'.",
-    "ref": "q3-ref"
+    "explanation": `Question no. 3: Paragraph C
+
+The answer can be found in lines 1-3 of paragraph C. The author mentions here, “There is a widespread belief that increasing wealth encourages people to live farther out where cars are the only viable transport. The example of European cities refutes that. They are often wealthier than their American counterparts but have not generated the same level of car use.”
+
+Here, refutes = the example directly contradicts the previous statement / Higher incomes need not mean more cars
+
+So, the answer is: iv (Higher incomes need not mean more cars)`
   },
   "4": {
-    "answer": "i",
-    "explanation": "Paragraph D discusses 'The Urban Village' report, which found that 'pushing everyone into the city centre was not the best approach' and instead advocated for creating smaller 'urban villages' around railway stations to avoid overcrowding the center.",
-    "ref": "q4-ref"
+    "explanation": `Question no. 4: Paragraph D
+
+The answer can be found in lines 2-3 of paragraph D. The writer says here, “. .. . which used Melbourne as an example. It found that pushing everyone into the city centre was not the best approach. . .. ..”
+
+Here, pushing everyone into the city centre was not the best approach = Avoiding an overcrowded centre,
+
+So, the answer is: i (Avoiding an overcrowded centre)`
   },
   "5": {
-    "answer": "iii",
-    "explanation": "Paragraph E explains that despite the rise of telecommunications, population density in cities rose because 'it is valuable to place people working in related fields together' as 'creativity flourishes where people come together face-to-face'.",
-    "ref": "q5-ref"
+    "explanation": `Question no. 5: Paragraph E
+
+The answer can be found in lines 4-6 of paragraph E. The author says here, “. . .. . The explanation for this seems to be that it is valuable to place people working in related fields together. ‘The new world will largely depend on human creativity, and creativity flourishes where people come together face-to-face.’”
+
+Here, valuable to place people working in related fields together = benefits of working together in cities,
+
+So, the answer is: iii (The benefits of working together in cities)`
   },
   "6": {
-    "answer": "FALSE",
-    "explanation": "The first paragraph states that the study 'compared the proportion of wealth poured into transport by thirty-seven cities around the world', not 'every city of the world'.",
-    "ref": "q6-ref"
+    "explanation": `Question no. 6: The ISTP study examined public and private systems in every city in the world.
+
+Keywords for the question: ISTP study, examined, public and private systems, every city in the world,
+
+The answer can be traced in lines 1-3 of paragraph no. 1, “A new study conducted for the World Bank by Murdoch University’s Institute for Science and Technology Policy (ISTP) has demonstrated that public transport is more efficient than cars. The study compared the proportion of wealth poured into transport by thirty-seven cities around the world. . . .. ”
+
+Here, the lines suggest that the study compared public and private systems in 37 countries, not every city in the world.
+
+So, the answer is: FALSE`
   },
   "7": {
-    "answer": "TRUE",
-    "explanation": "The second paragraph states that 'more efficient cities were able to put the difference into attracting industry and jobs or creating a better place to live', which supports the idea that they can improve the quality of life.",
-    "ref": "q7-ref"
+    "explanation": `Question no. 7: Efficient cities can improve the quality of life for their inhabitants.
+
+Keywords for the question: efficient cities, can improve, quality of life, inhabitants,
+
+The first last lines of paragraph no. 1 say, “ . .. .. Professor Peter Newman, ISTP Director, pointed out that these more efficient cities were able to put the difference into attracting industry and jobs or creating a better place to live.”
+
+Here, creating a better place to live = improves the quality of life for their inhabitants,
+
+So, the answer is: TRUE`
   },
   "8": {
-    "answer": "NOT GIVEN",
-    "explanation": "The passage mentions Melbourne's tram network and its effect on car use but provides no information about whether it is dangerous for car drivers."
+    "explanation": `Question no. 8: An inner-city tram network is dangerous for car drivers.
+
+Keywords for the question: inner-city tram network, dangerous for, car drivers,
+
+In paragraph no. 3 we can see the mention of ‘inner-city tram network’ of Melbourne in line no. 3. However, no information can be found about whether an inner-city tram network is dangerous for car drivers or not.
+
+So, the answer is: NOT GIVEN`
   },
   "9": {
-    "answer": "FALSE",
-    "explanation": "The third paragraph states, 'The explosion in demand for accommodation in the inner suburbs of Melbourne suggests a recent change in many people’s preferences as to where they live.' This indicates a preference for inner suburbs, not outer ones.",
-    "ref": "q9-ref"
+    "explanation": `Question no. 9: In Melbourne, people prefer to live in the outer suburbs.
+
+Keywords for the question: Melbourne, people, prefer, live, outer suburbs,
+
+In paragraph no. 3, take a look at the last lines, “ .. . The explosion in demand for accommodation in the inner suburbs of Melbourne suggests a recent change in many people’s preferences as to where they live.”
+
+Here, demand for accommodation in the inner suburbs = people prefer to live in the inner suburbs,
+
+So, the answer is: FALSE`
   },
   "10": {
-    "answer": "TRUE",
-    "explanation": "The fifth paragraph notes that Amsterdam and Copenhagen 'were very efficient, even though their public transport systems were ‘reasonable but not special’', attributing this to their bicycle-friendly nature.",
-    "ref": "q10-ref"
+    "explanation": `Question no. 10: Cities with high levels of bicycle usage can be efficient even when public transport is only averagely good.
+
+Keywords for the question: cities, high levels of bicycle usage, can be efficient, public transport, only averagely good,
+
+Take a close look at paragraph no. 5 as the author mentions in lines 1-3, “Bicycle use was not included in the study but Newman noted that the two most ‘bicycle friendly’ cities considered – Amsterdam and Copenhagen – were very efficient, even though their public transport systems were ‘reasonable but not special’.”
+
+Here, ‘bicycle friendly’ cities = Cities with high levels of bicycle usage, public transport systems were ‘reasonable but not special’ = public transport is only averagely good,
+
+So, the answer is: TRUE`
   },
   "11": {
-    "answer": "F",
-    "explanation": "The second paragraph identifies Perth as 'a good example of a city with minimal public transport' which resulted in 17% of its wealth going into transport costs, making it inefficient.",
-    "ref": "q11-ref"
+    "explanation": `Question no. 11: Perth
+
+Keywords for the question: Perth,
+
+Take a look at paragraph no. 2 where the writer mentions about Perth. Lines 1-3 say, “ . .. .. . Western Australian city of Perth is a good example of a city with minimal public transport. As a result, 17% of its wealth went into transport costs. Some European and Asian cities, on the other hand, spent as little as 5%. .. .”
+
+Here, minimal public transport = limited public transport system, 17% of its wealth went into transport costs = inefficient,
+
+So, the answer is: F (inefficient due to a limited public transport system)`
   },
   "12": {
-    "answer": "D",
-    "explanation": "The seventh paragraph states, 'Newman accepts it would be hard for a city as hilly as Auckland to develop a really good rail network,' which directly matches the description of being hilly and inappropriate for a rail system.",
-    "ref": "q12-ref"
+    "explanation": `Question no. 12: Auckland
+
+Keywords for the question: Auckland,
+
+In paragraph no. 7, the writer says in lines 2-3, “ . .. . Newman accepts it would be hard for a city as hilly as Auckland to develop a really good rail network.. .. .”
+
+Here, it would be hard = inappropriate,
+
+So, the answer is: D (hilly and inappropriate for rail transport system)`
   },
   "13": {
-    "answer": "C",
-    "explanation": "Paragraph A describes how Portland used federal money for a light rail system instead of a road, and that 'The rail proposal won and the railway worked spectacularly well', which aligns with moving from road to a successful light rail system.",
-    "ref": "q13-ref"
+    "explanation": `Question no. 13: Portland
+
+Keywords for the question: Portland,
+
+Lines 2-5 in paragraph A says, “. … He considers Portland, Oregon, a perfect example of this. Some years ago, federal money was granted to build a new road. However, local pressure groups forced a referendum over whether to spend the money on light rail instead. The rail proposal won and the railway worked spectacularly well. . .. .”
+
+Here, federal money was granted to build a new road = government wanted to build road,
+
+local pressure groups forced a referendum over whether to spend the money on light rail instead = local people wanted rail road,
+
+rail proposal won = move from road to light rail transport system, worked spectacularly well = profitable,
+
+So, the answer is: C (profitably moved from road to light rail transport system)`
   },
   "14": {
-    "answer": "B",
-    "explanation": "The passage states in the second paragraph that major medical complaints 'are troubling a smaller proportion every year', which means the proportion is falling."
+    "explanation": `Question no. 14 & 15: Research carried out by scientists in the United States has shown that the proportion of people over 65 suffering from the most common age-related medical problems is 14. _________ and that the speed of this change is 15. ________.
+
+Keywords for the question: research, United States, proportion, people over 65, suffering from, most common age-related medical problems, speed, change,
+
+In paragraph no. 2 the author states in lines 1-6, “In the last 14 years, the National Long-term Health Care Survey has gathered data on the health and lifestyles of more than 20,000 men and women over 65. Researchers, now analysing the results of data gathered in 1994, say arthritis, high blood pressure and circulation problems – the major medical complaints in this age group – are troubling a smaller proportion every year. And the data confirms that the rate at which these diseases are declining continues to accelerate… . . .”
+
+Here, men and women over 65 = people over 65, the major medical complaints in this age group = the most common age-related medical problems, the rate = the proportion,
+
+are declining = falling (B), to accelerate = the speed is increasing (I)
+
+So, the answers are:
+
+B (falling) I (increasing)`
   },
   "15": {
-    "answer": "I",
-    "explanation": "The second paragraph says, 'And the data confirms that the rate at which these diseases are declining continues to accelerate.' Accelerating means the speed of change is increasing."
+    "explanation": `Question no. 14 & 15: Research carried out by scientists in the United States has shown that the proportion of people over 65 suffering from the most common age-related medical problems is 14. _________ and that the speed of this change is 15. ________.
+
+Keywords for the question: research, United States, proportion, people over 65, suffering from, most common age-related medical problems, speed, change,
+
+In paragraph no. 2 the author states in lines 1-6, “In the last 14 years, the National Long-term Health Care Survey has gathered data on the health and lifestyles of more than 20,000 men and women over 65. Researchers, now analysing the results of data gathered in 1994, say arthritis, high blood pressure and circulation problems – the major medical complaints in this age group – are troubling a smaller proportion every year. And the data confirms that the rate at which these diseases are declining continues to accelerate… . . .”
+
+Here, men and women over 65 = people over 65, the major medical complaints in this age group = the most common age-related medical problems, the rate = the proportion,
+
+are declining = falling (B), to accelerate = the speed is increasing (I)
+
+So, the answers are:
+
+B (falling) I (increasing)`
   },
   "16": {
-    "answer": "F",
-    "explanation": "The first paragraph states, 'when they do strike, it is much later in life.' The third paragraph reinforces this: 'problems doctors accepted as normal in a 65-year-old in 1982 are often not appearing until people are 70 or 75.'"
+    "explanation": `Question no. 16: It also seems that these diseases are affecting people _________ in life than they did in the past.
+
+Keywords for the question: seems, these diseases, affecting people, in life, than, in the past,
+
+For this question’s answer, we have to look at paragraph no. 3. Here, in lines 2-3, the writer says, “ . . .. He says the problems doctors accepted as normal in a 65-year-old in 1982 are often not appearing until people are 70 or 75.”
+
+Here, the problems = these diseases, often not appearing until people are 70 or 75 = often affecting people later in life (70 or 75).
+
+So, the answer is: F (later)`
   },
   "17": {
-    "answer": "M",
-    "explanation": "The fourth paragraph says, 'Clearly, certain diseases are beating a retreat in the face of medical advances.' 'Medical advances' corresponds to developments in medicine."
+    "explanation": `Question no. 17 & 18: This is largely due to developments in 17. ________ but other factors such as improved 18. _________ may also be playing a part.
+
+Keywords for the question: largely, due to, developments, but, other factors such as, improved, may be, playing a part,
+
+The answer can be found in paragraph no. 4. Here, the writer says in lines 1-4, “Clearly, certain diseases are beating a retreat in the face of medical advances. But there may be other contributing factors. Improvements in childhood nutrition in the first quarter of the twentieth century, for example, gave today’s elderly people a better start in life than their predecessors.”
+
+Here, in the face of medical advances = developments in medicine, other contributing factors = other factors, Improvements in childhood nutrition = improved nutrition,
+
+So, the answers are:
+
+M (medicine) J (nutrition)`
   },
   "18": {
-    "answer": "J",
-    "explanation": "The fourth paragraph mentions other factors: 'Improvements in childhood nutrition in the first quarter of the twentieth century, for example, gave today’s elderly people a better start in life than their predecessors.'"
+    "explanation": `Question no. 17 & 18: This is largely due to developments in 17. ________ but other factors such as improved 18. _________ may also be playing a part.
+
+Keywords for the question: largely, due to, developments, but, other factors such as, improved, may be, playing a part,
+
+The answer can be found in paragraph no. 4. Here, the writer says in lines 1-4, “Clearly, certain diseases are beating a retreat in the face of medical advances. But there may be other contributing factors. Improvements in childhood nutrition in the first quarter of the twentieth century, for example, gave today’s elderly people a better start in life than their predecessors.”
+
+Here, in the face of medical advances = developments in medicine, other contributing factors = other factors, Improvements in childhood nutrition = improved nutrition,
+
+So, the answers are:
+
+M (medicine) J (nutrition)`
   },
   "19": {
-    "answer": "N",
-    "explanation": "The fifth paragraph links surges in some illnesses to 'changing smoking habits and poorer air quality', which is a form of pollution."
+    "explanation": `Question no. 19: Increases in some other illnesses may be due to changes in personal habits and to ________.
+
+Keywords for the question: increases, some other illnesses, may be, due to, changes, personal habits,
+
+The answer can be found in paragraph no. 5. The author says here in lines 1-3, “On the downside, the data also reveals failures in public health that have caused surges in some illnesses. An increase in some cancers and bronchitis may reflect changing smoking habits and poorer air quality, say the researchers. . .. .”
+
+Here, An increase in some cancers and bronchitis = Increases in some other illnesses, smoking habits = personal habits, poorer air quality = pollution,
+
+So, the answer is: N (pollution)`
   },
   "20": {
-    "answer": "K",
-    "explanation": "The sixth paragraph establishes a correlation: 'better-educated people are likely to live longer.' This links levels of education and life expectancy."
+    "explanation": `Question no. 20: The research establishes a link between levels of _________ and life expectancy.
+
+Keywords for the question: research, establishes, link between, levels of, life expectancy,
+
+In paragraph no. 6 the author writes in the beginning, “One interesting correlation Manton uncovered is that better-educated people are likely to live longer. .. .. .”
+
+Here, correlation = link, likely to live longer = life expectancy,
+
+better-educated people = education,
+
+So, the answer is: K (education)`
   },
   "21": {
-    "answer": "G",
-    "explanation": "The seventh paragraph mentions a 'significant drop in the number of disabled old people in the population.'"
+    "explanation": `Question no. 21 & 22: It also shows that there has been a considerable reduction in the number of elderly people who are 21. _________ which means that the 22. _________ involved in supporting this section of the population may be less than previously predicted.
+
+Keywords for the question: considerable reduction, number of elderly people, who are, means, involved in, supporting, this section of population, may be, less than, previously predicted,
+
+In paragraph no. 7, the writer says in lines 4-9, “.. .. . That represents a significant drop in the number of disabled old people in the population. If the trends apparent in the United States 14 years ago had continued, researchers calculate there would be an additional one million disabled elderly people in today’s population. According to Manton, slowing the trend has saved the United States government’s Medicare system more than $200 billion, suggesting that the greying of America’s population may prove less of a financial burden than expected.”
+
+Here, significant drop = considerable reduction, disabled old people = elderly people who are disabled (G), may prove less = may be less, financial burden = cost (A),
+
+So, the answers are:
+
+G (disabled) A (cost)`
   },
   "22": {
-    "answer": "A",
-    "explanation": "The seventh paragraph concludes that the 'greying of America’s population may prove less of a financial burden than expected' and mentions saving the Medicare system over $200 billion. This relates to cost."
+    "explanation": `Question no. 21 & 22: It also shows that there has been a considerable reduction in the number of elderly people who are 21. _________ which means that the 22. _________ involved in supporting this section of the population may be less than previously predicted.
+
+Keywords for the question: considerable reduction, number of elderly people, who are, means, involved in, supporting, this section of population, may be, less than, previously predicted,
+
+In paragraph no. 7, the writer says in lines 4-9, “.. .. . That represents a significant drop in the number of disabled old people in the population. If the trends apparent in the United States 14 years ago had continued, researchers calculate there would be an additional one million disabled elderly people in today’s population. According to Manton, slowing the trend has saved the United States government’s Medicare system more than $200 billion, suggesting that the greying of America’s population may prove less of a financial burden than expected.”
+
+Here, significant drop = considerable reduction, disabled old people = elderly people who are disabled (G), may prove less = may be less, financial burden = cost (A),
+
+So, the answers are:
+
+G (disabled) A (cost)`
   },
   "23": {
-    "answer": "G",
-    "explanation": "The eighth paragraph links the 'massive increase in the use of simple home medical aids' to the 'increasing self-reliance of many elderly people' and their ability to retain a sense of independence."
+    "explanation": `Question no. 23: Home medical aids
+
+Keywords for the question: home medical aids,
+
+The answer can be found in paragraph no. 8. The writer says here, “The increasing self-reliance of many elderly people is probably linked to a massive increase in the use of simple home medical aids. .. . . .”
+
+Here, increasing self-reliance of many elderly people = old people to be more independent,
+
+So, the answer is: G (allow old people to be more independent.)`
   },
   "24": {
-    "answer": "E",
-    "explanation": "The ninth paragraph states that 'Maintaining a level of daily physical activity may help mental functioning' and 'may prevent the brains of active humans from deteriorating.'"
+    "explanation": `Question no. 24: Regular amounts of exercise
+
+Keywords for the question: regular amounts of exercise,
+
+The answer can be found in paragraph no. 9. In this paragraph, the writer says, “Maintaining a level of daily physical activity may help mental functioning, says Carl Cotman, a neuroscientist at the University of California at Irvine. He found that rats that exercise on a treadmill have raised levels of brain-derived neurotrophic factor coursing through their brains. Cotman believes this hormone, which keeps neurons functioning, may prevent the brains of active humans from deteriorating.”
+
+Here, Maintaining a level of daily physical activity = Regular amounts of exercise, may prevent the brains of active humans from deteriorating = help prevent mental decline,
+
+So, the answer is: E (may help prevent mental decline.)`
   },
   "25": {
-    "answer": "H",
-    "explanation": "The tenth paragraph found that 'those who felt in control of their lives pumped out lower levels of stress hormones such as cortisol' during challenging activities. This shows it can reduce stress."
+    "explanation": `Question no. 25: Feelings of control over life
+
+Keywords for the question: feelings, control over life,
+
+Here, bulk cargo means heavy or large goods transported from one place to other.
+
+The author says in paragraph no. 10, “ . .. . found a connection between self-esteem and stress in people over 70. In laboratory simulations of challenging activities such as driving, those who felt in control of their lives pumped out lower levels of stress hormones such as cortisol.”
+
+Here, felt in control of their lives = feelings of control over life, lower levels of stress hormones = reduce stress in difficult situations,
+
+So, the answer is: H (can reduce stress in difficult situations.)`
   },
   "26": {
-    "answer": "C",
-    "explanation": "The eleventh paragraph states that 'elderly people who felt emotionally isolated maintained higher levels of stress hormones even when asleep.' This shows loneliness may cause rises in stress hormones."
+    "explanation": `Question no. 26: Feelings of loneliness
+
+Keywords for the question: feelings of loneliness,
+
+The answer can be found in paragraph no. 11 in lines 1-2, “ . .. . Seeman found that elderly people who felt emotionally isolated maintained higher levels of stress hormones even when asleep. … . .”
+
+Here, felt emotionally isolated = feelings of loneliness, maintained higher levels of stress hormones = cause rise in levels of stress hormones,
+
+So, the answer is: C (may cause rises in levels of stress hormones.)`
   },
   "27": {
-    "answer": "B",
-    "explanation": "Paragraph 2 states: 'As they began to settle, grow plants and herd animals, the need for a sophisticated number system became paramount.' Farming (growing plants/herding animals) required this development."
+    "explanation": `Question no. 27: A developed system of numbering –
+
+Keywords for the question: developed system, numbering,
+
+In paragraph no. 2, the writer mentions the reason for the need of a developed system of numbering. In line no. 3 take a look at the phrase ‘our ancestors’. Then in lines 7-8, the writer says, “. . . . As they began to settle, grow plants and herd animals, the need for a sophisticated number system became paramount. … .”
+
+Here, they (our ancestors) = people, to settle, grow plants and herd animals = began farming, sophisticated number system = developed system of numbering,
+
+So, the answer is: B (was necessary when people began farming.)`
   },
   "28": {
-    "answer": "E",
-    "explanation": "Paragraph 3 mentions: 'But in real situations the number and words are often accompanied by gestures to help resolve any confusion.' This happens when the basic approach (range of numbers) is limited."
+    "explanation": `Question no. 28: An additional hand signal –
+
+Keywords for the question: additional, hand signal,
+
+Paragraph no. 3 highlights the use of hand signals and discusses some types of hand signals first. Then, in lines 5-8 the writer explains, “ . .. For example, when using the one, two, many type of system, the word many would mean, ‘Look at my hands and see how many fingers I am showing you’. This basic approach is limited in the range of numbers that it can express, but this range will generally suffice when dealing with the simpler aspects of human existence.
+
+Here, the one, two, many type of system = additional hand signal, limited in the range of numbers = range of number word was restricted,
+
+So, the answer is: E (was used when the range of number words was restricted.)`
   },
   "29": {
-    "answer": "A",
-    "explanation": "Paragraph 4 states: 'In fact, to qualify as a witness in a court of law a man had to be able to count to nine!' Being a witness is a civic role."
+    "explanation": `Question no. 29: In seventh-century Europe, the ability to count to a certain number –
+
+Keywords for the question: seventh-century, Europe, ability, count, certain number,
+
+The answer can be found in paragraph no. 4 where the keywords ‘seventh-century’ and ‘Europe’ can be found. In lines 6-8 the author says, “ . .. The average person in the seventh century in Europe was not as familiar with numbers as we are today. In fact, to qualify as a witness in a court of law a man had to be able to count to nine!”
+
+Here, to qualify as a witness in a court of law = to fulfill a civic role, had to be able to = was necessary,
+
+So, the answer is: A (was necessary in order to fulfill a civic role.)`
   },
   "30": {
-    "answer": "C",
-    "explanation": "Paragraph 5 states: 'When the number 4 can be registered in the mind as a specific word, independent of the object being referenced, the individual is ready to take the first step toward the development of a notational system for numbers and, from there, to arithmetic.'"
+    "explanation": `Question no. 30: Thinking about numbers as concepts separate from physical objects –
+
+Keywords for the question: thinking, numbers, concepts, separate from, physical objects,
+
+The answer is in paragraph no.5. First, the writer says at the beginning of the paragraph, “Perhaps the most fundamental step in developing a sense of number is not the ability to count, but rather to see that a number is really an abstract idea instead of a simple attachment to a group of particular objects.”
+
+Here, an abstract idea = concepts, group of particular objects = physical objects,
+
+Then, in the final lines of paragraph no. 5, the writer says, “… .. . When the number 4 can be registered in the mind as a specific word, independent of the object being referenced, the individual is ready to take the first step toward the development of a notational system for numbers and, from there, to arithmetic.”
+
+Here, the first step toward the development of a notational system for numbers and, from there, to arithmetic = development of arithmetic,
+
+So, the answer is: C (was necessary for the development of arithmetic.)`
   },
   "31": {
-    "answer": "G",
-    "explanation": "Paragraph 6 describes the Tsimshian language having distinct sets of words for different objects and notes: 'the first six groups show the relics of an older system.' This implies it was a characteristic of early systems."
+    "explanation": `Question no. 31: Expressing number differently according to class of item –
+
+Keywords for the question: expressing number, differently, according to, class of item,
+
+The writer says in paragraph no. 6, “ .. . . Traces of the very first stages in the development of numeration can be seen in several living languages today. The numeration system of the Tsimshian language in British Columbia contains seven distinct sets of words for numbers according to the class of the item being counted: for counting flat objects and animals, for round objects and time, for people, for long objects and trees, for canoes, for measures, and for counting when no particular object is being numerated. .. . ..”
+
+Here, Traces of the very first stages in the development of numeration = characteristics of early numeration systems,
+
+So, the answer is: G (was a characteristic of early numeration systems.)`
   },
   "32": {
-    "answer": "TRUE",
-    "explanation": "Paragraph 2 states: 'Our ancestors had little use for actual numbers; instead their considerations would have been more of the kind Is this enough? Rather than how many?'"
+    "explanation": `Question no. 32: For the earliest tribes, the concept of sufficiency was more important than the concept of quantity.
+
+Keywords for the question: earliest tribes, sufficiency, more important, than, quantity,
+
+Let’s read the second paragraph. The author mentions here in lines 2-4, “ . .. Even the earliest of tribes had a system of numeration that, if not advanced, was sufficient for the tasks that they had to perform. Our ancestors had little use for actual numbers; . . . .”
+
+Here, was sufficient for the tasks that they had to perform = the concept of sufficiency was more important, Our ancestors had little use for actual numbers = the concept of quantity was less important,
+
+So, the answer is: TRUE`
   },
   "33": {
-    "answer": "FALSE",
-    "explanation": "Paragraph 3 states: 'The indigenous peoples of Tasmania were only able to count one, two, many'. This is three terms, not four."
+    "explanation": `Question no. 33: Indigenous Tasmanians used only four terms to indicate numbers of objects.
+
+Keywords for the question: Indigenous Tasmanians, used, only four terms, indicate, numbers of objects,
+
+The answer can be traced in lines 1-2 of paragraph no. 3, “ . .. The indigenous peoples of Tasmania were only able to count one, two, many; . .. .”
+
+Here, The indigenous peoples of Tasmania = Indigenous Tasmanians, able to count = used, one, two, many = three terms,
+
+So, the answer is: FALSE`
   },
   "34": {
-    "answer": "TRUE",
-    "explanation": "Paragraph 3 states: 'But in real situations the number and words are often accompanied by gestures to help resolve any confusion.'"
+    "explanation": `Question no. 34: Some peoples with simple number systems use body language to prevent misunderstanding of expressions of number.
+
+Keywords for the question: some people, simple number systems, use, body language, to prevent, misunderstanding, expressions of number,
+
+Again, in the third paragraph, lines 3-4 say, “ . . . But in real situations the number and words are often accompanied by gestures to help resolve any confusion. . .. .”
+
+Here, often accompanied by gestures = use body languages, resolve any confusion = prevent misunderstanding of expressions,
+
+So, the answer is: TRUE`
   },
   "35": {
-    "answer": "FALSE",
-    "explanation": "Paragraph 4 states: 'The lack of ability of some cultures to deal with large numbers is not really surprising.' This contradicts the statement that *all* cultures could express them clearly."
+    "explanation": `Question no. 35: All cultures have been able to express large numbers clearly.
+
+Keywords for the question: all cultures, have been able, to express, large numbers, clearly,
+
+The writer says in paragraph no. 4 in line no. 1, “The lack of ability of some cultures to deal with large numbers is not really surprising. .. . …”
+
+Here, lack of ability of some cultures to deal with large numbers = Not all cultures have been able to express large numbers clearly,
+
+So, the answer is: FALSE`
   },
   "36": {
-    "answer": "NOT GIVEN",
-    "explanation": "Paragraph 4 discusses words for ten and hundred (tachund, hund, teon), but there is no mention of the word 'thousand' or its origins."
+    "explanation": `Question no. 36: The word ‘thousand’ has Anglo-Saxon origins.
+
+Keywords for the question: word ‘thousand’, Anglo-Saxon origins,
+
+The author talks about the Anglo-Saxon language in paragraph no. 4 providing a list of words and their origins. We can find only the numbers 10 and 100, but there is no discussion about the origin of the number ‘thousand’.
+
+So, the answer is: NOT GIVEN`
   },
   "37": {
-    "answer": "TRUE",
-    "explanation": "Paragraph 4 states: 'The average person in the seventh century in Europe was not as familiar with numbers as we are today.' and mentions counting to nine was a requirement for a witness, implying general ability was low."
+    "explanation": `Question no. 37: In general, people in seventh-century Europe had poor counting ability.
+
+Keywords for the question: in general, people, seventh-century, Europe, poor counting ability,
+
+At the end of paragraph no. 4 the writer says, “ . .. The average person in the seventh century in Europe was not as familiar with numbers as we are today. .. ..”
+
+Here, The average person in the seventh century = In general, people in seventh-century Europe, not as familiar with numbers = poor counting ability,
+
+So, the answer is: TRUE`
   },
   "38": {
-    "answer": "FALSE",
-    "explanation": "Paragraph 6 lists 'for long objects and trees' and 'for canoes' as separate categories in the list of seven distinct sets. They are not expressed with the same word."
+    "explanation": `Question no. 38: In the Tsimshian language, the number for long objects and canoes is expressed with the same word.
+
+Keywords for the question: Tsimshian language, number for long objects, canoes, expressed, same word,
+
+The answer can be found in paragraph no. 6. The writer says here in lines 2-5, “. . .. The numeration system of the Tsimshian language in British Columbia contains seven distinct sets of words for numbers according to the class of the item being counted: for counting flat objects and animals, for round objects and time, for people, for long objects and trees, for canoes, for measures, and for counting when no particular object is being numerated.… .. ..”
+
+Here, seven distinct sets of words = not same words,
+
+So, the answer is: FALSE`
   },
   "39": {
-    "answer": "TRUE",
-    "explanation": "Paragraph 6 states: 'It seems that the last is a later development while the first six groups show the relics of an older system.' Thus containing both."
+    "explanation": `Question no. 39: The Tsimshian language contains both older and newer systems of counting.
+
+Keywords for the question: Tsimshian language, contains, both older and newer systems, counting,
+
+After the information about listing seven distinct sets of words for numbers according to the class of item in the Tsimshian language, the author says in lines 6-7, “It seems that the last is a later development while the first six groups show the relics of an older system.”
+
+This means the Tsimshian language has both old and new systems for counting.
+
+So, the answer is: TRUE`
   },
   "40": {
-    "answer": "NOT GIVEN",
-    "explanation": "Paragraph 7 mentions counting against 'pebbles, grains of corn, or the counter’s fingers', but does not state that fingers were *easier* than pebbles."
+    "explanation": `Question no. 40: Early peoples found it easier to count by using their fingers rather than a group of pebbles.
+
+Keywords for the question: early peoples, found, easier, to count, using, fingers, rather than, group of pebbles,
+
+In the final paragraph, the author mentions in lines 2-3, “ . .. . it is possible to count by matching the items being counted against a group of pebbles, grains of corn, or the counter’s fingers. .. ..”
+
+However, there is no mention regarding whether early people found it easier to count by using their fingers or a group of pebbles.
+
+So, the answer is: NOT GIVEN`
   }
 };
