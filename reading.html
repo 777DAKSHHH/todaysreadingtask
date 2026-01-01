@@ -28,57 +28,143 @@
   <!-- Custom Reading CSS -->
   <link href="assets/css/reading.css" rel="stylesheet">
   <style>
+    /* Full Screen Split Layout */
+    body, html {
+      height: 100%;
+      overflow: hidden;
+      background-color: #f8f9fa;
+    }
+    .main {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .page-title {
+      flex: 0 0 auto;
+      background: #ffffff;
+      border-bottom: 1px solid #dee2e6;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .page-title h1 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0;
+      color: #343a40;
+    }
+    .reading-test {
+      flex: 1 1 auto;
+      height: 100%;
+      overflow: hidden;
+      padding: 0 !important;
+    }
+    .reading-test .container-fluid, .test-content, .test-content .row {
+      height: 100%;
+    }
+    .test-content .col-lg-6 {
+      height: 100%;
+      overflow-y: auto;
+      padding: 30px;
+      border-right: 1px solid #e9ecef;
+      background: #fff;
+    }
+    .reading-card {
+      box-shadow: none;
+      padding: 0;
+    }
     .highlight-text {
-      background-color: #cfe2ff;
+      background-color: #fff3cd;
       border-radius: 3px;
-      padding: 2px 0;
-      box-shadow: 0 0 0 2px #cfe2ff;
-      transition: background-color 0.3s ease-in-out;
-      scroll-margin-top: 150px;
+      box-shadow: 0 0 0 2px #fff3cd;
+      scroll-margin-top: 50px;
+    }
+    /* Security and Selection Overlays */
+    #auth-overlay, #selection-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f8f9fa;
+      z-index: 10000;
+    }
+    .auth-card {
+      max-width: 400px;
+      width: 90%;
+    }
+    /* Answer Explanation Styling */
+    .collapse .card-body {
+      background-color: #f8f9fa !important;
+      border: 1px solid #e9ecef;
+      border-left: 4px solid #0d6efd;
+      border-radius: 4px;
+      padding: 0.75rem 1rem !important;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      font-size: 0.925rem;
+      line-height: 1.5;
+    }
+    .ans-content h4 {
+      color: #0d6efd;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .ans-content blockquote {
+      background-color: #ffffff;
+      border-left: 3px solid #6c757d;
+      padding: 0.5rem 0.75rem;
+      margin: 0.5rem 0;
+      font-style: italic;
+      color: #495057;
+      border-radius: 0 3px 3px 0;
     }
   </style>
 </head>
 
 <body class="reading-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <h1 class="sitename">IELTS Prep</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="reading.html" class="active">Reading Practice</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
+  <!-- Password Protection Overlay -->
+  <div id="auth-overlay" class="d-flex align-items-center justify-content-center">
+    <div class="auth-card bg-white p-4 rounded shadow text-center">
+      <h3 class="mb-4">IELTS Prep Access</h3>
+      <div class="mb-3">
+        <input type="password" id="password-input" class="form-control" placeholder="Enter Password">
+      </div>
+      <button id="btn-login" class="btn btn-primary w-100">Login</button>
+      <p id="login-error" class="text-danger mt-2 d-none">Incorrect Password</p>
     </div>
-  </header>
+  </div>
+
+  <!-- Test Selection Overlay -->
+  <div id="selection-overlay" class="d-none align-items-center justify-content-center">
+    <div class="auth-card bg-white p-4 rounded shadow text-center">
+      <h3 class="mb-4">Select Reading Test</h3>
+      <button id="btn-cam6" class="btn btn-success w-100 mb-3">CAM 6 TEST 2</button>
+      <button id="btn-ontrack" class="btn btn-outline-primary w-100">IELTS ON TRACK TEST 2</button>
+    </div>
+  </div>
 
   <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="heading">
-        <div class="container">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-lg-8">
-              <h1>IELTS Reading Practice Test</h1>
-              <p class="mb-0">Passage 1, 2 & 3</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="page-title">
+      <a href="index.html" class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2">
+        <i class="bi bi-arrow-left"></i> Home
+      </a>
+      <h1>IELTS Reading Practice</h1>
+      <div style="width: 80px;"></div> <!-- Spacer for centering -->
     </div><!-- End Page Title -->
 
     <!-- Reading Section -->
     <section id="reading-test" class="reading-test section">
-      <div class="container-fluid container-xl">
-        <div class="row gy-4">
+      <div class="container-fluid p-0">
+        <!-- CAM 6 TEST 2 Content -->
+        <div id="test-cam6" class="test-content">
+          <div class="row g-0">
           
           <!-- Left Column: Reading Passage -->
           <div class="col-lg-6">
@@ -282,7 +368,7 @@
               <p class="text-muted mb-4">Complete the summary using the list of words, A-Q, below. Click on the numbers to see the answers.</p>
               <p>Research carried out by scientists in the United States has shown that the proportion of people over 65 suffering from the most common age-related medical problems is <button class="btn btn-link q-link-toggle p-0" data-id="14">(14)</button> and that the speed of this change is <button class="btn btn-link q-link-toggle p-0" data-id="15">(15)</button>. It also seems that these diseases are affecting people <button class="btn btn-link q-link-toggle p-0" data-id="16">(16)</button> in life than they did in the past. This is largely due to developments in <button class="btn btn-link q-link-toggle p-0" data-id="17">(17)</button> , but other factors such as improved <button class="btn btn-link q-link-toggle p-0" data-id="18">(18)</button> may also be playing a part. Increases in some other illnesses may be due to changes in personal habits and to <button class="btn btn-link q-link-toggle p-0" data-id="19">(19)</button> . The research establishes a link between levels of <button class="btn btn-link q-link-toggle p-0" data-id="20">(20)</button> and life expectancy. It also shows that there has been a considerable reduction in the number of elderly people who are <button class="btn btn-link q-link-toggle p-0" data-id="21">(21)</button> , which means that the <button class="btn btn-link q-link-toggle p-0" data-id="22">(22)</button> involved in supporting this section of the population may be less than previously predicted.</p>
               
-              <div id="summary-answers" class="mt-3" data-aos="fade-up">
+              <div id="summary-answers" class="mt-3">
                 <div class="collapse" id="ans-14"><div class="card card-body bg-light py-2 mb-2"><strong>Q14:</strong> <span class="ans-content" data-id="14">Answer will appear here</span></div></div>
                 <div class="collapse" id="ans-15"><div class="card card-body bg-light py-2 mb-2"><strong>Q15:</strong> <span class="ans-content" data-id="15">Answer will appear here</span></div></div>
                 <div class="collapse" id="ans-16"><div class="card card-body bg-light py-2 mb-2"><strong>Q16:</strong> <span class="ans-content" data-id="16">Answer will appear here</span></div></div>
@@ -487,20 +573,274 @@
             </div>
           </div>
 
+          </div>
+        </div>
+
+        <!-- IELTS ON TRACK TEST 2 Content -->
+        <div id="test-ontrack" class="test-content d-none">
+          <div class="row g-0">
+            
+            <!-- Left Column: Reading Passage -->
+            <div class="col-lg-6">
+              <div class="reading-card passage-box">
+                <h4 class="mb-3">READING PASSAGE 1</h4>
+                <h3>Please hold the line</h3>
+                <p>Nearly all of us know what it’s like to be put on ‘musical hold’. Call almost any customer service number, and you can expect to hear at least a few bars of boring elevator music before an operator picks up. The question is: do you hang up or do you keep holding? <span id="qot-1-ref">That may depend on your gender and what type of music is playing</span>, according to research reported by University of Cincinnati Associate Professor of Marketing, James Kellaris.</p>
+                <p>Kellaris, who has studied the effects of music on consumers for more than 12 years, teamed with Sigma Research Management Group to evaluate the effects of ‘hold music’ for a company that operates a customer service line.</p>
+                <p><span id="qot-9-ref">The researchers tested four types of ‘on-hold’ music with 71 of the company’s clients</span>, <span id="qot-10-ref">30 of them women</span>. Light jazz, classical, rock and the company’s current format of adult alternative (a mix of contemporary styles) were all tested. The sample included individual consumers, small business and large business segments. Participants were asked to imagine calling a customer assistance line and being placed on hold. They were then exposed to ‘on-hold’ music via headsets and asked to estimate how long it played. <span id="qot-13-ref">Their reactions and comments were also solicited and quantified by the researchers.</span></p>
+                <p><span id="qot-8-ref">Service providers, of course don’t want you to have to wait on hold</span>, but if you do, they want it to be a pleasant experience for you. But Kellaris’ conclusions may hold some distressing news for companies. No matter what music was played, the time spent ‘on hold’ was generally overestimated. The actual wait in the study was 6 minutes, but the average estimate was 7 minutes and 6 seconds.</p>
+                <p>He did find some good news for the client who hired him. <span id="qot-2-ref"><span id="qot-12-ref">The kind of music they’re playing now, alternative, is probably their best choice.</span></span> <span id="qot-7-ref">Two things made it a good choice. First, it did not produce significantly more positive or negative reactions in people. Second, males and females were less polarised in their reactions to this type of music.</span></p>
+                <p>Kellaris’ other findings, however, make the state of musical hold a little less firm: <span id="qot-6-ref">time spent ‘on hold’ seemed slightly shorter when light jazz was played</span>, but the effect of music format differed for men and women. Among the males, the wait seemed shortest when classical music was played. Among the females, the wait seemed longest when classical music was played. This may be related to differences in attention levels and musical preferences.</p>
+                <p>In general, <span id="qot-3-ref">classical music evoked the most positive reactions among males</span>; light jazz evoked the most positive reactions (and shortest waiting time estimates) among females. <span id="qot-4-ref"><span id="qot-5-ref">Rock was the least preferred across both gender groups and produced the longest waiting time estimates.</span></span> ‘The rock music’s driving beat kind of aggravates people calling customer assistance with a problem,’ said Kellaris. ‘The more positive the reaction to the music, the shorter the waiting time seemed to be. So maybe time does tend to fly when you’re having fun, even if you’re on musical hold,’ Kellaris joked.</p>
+                <p>But unfortunately for companies operating on-hold lines, men and women have different ideas about what music is ‘fun’. ‘The possible solution,’ Kellaris joked, ‘might be for the recorded message to say: if you’re a male, please press one; if you’re a female, please press two. If you are in a bad mood, please hang up and try later.’</p>
+              <hr class="my-5">
+
+              <h4 class="mb-3">READING PASSAGE 2</h4>
+              <h3>Did tea and beer bring about industrialisation?</h3>
+              <p><strong>A</strong><br>Alan Macfarlane thinks he could rewrite history. The professor of anthropological science at King’s College, Cambridge has, like other historians, spent decades trying to understand the enigma of the Industrial Revolution. <span id="qot-25-ref">Why did this particular important event – the world-changing birth of industry – happen in Britain? And why did it happen at the end of the 18th century?</span></p>
+              <p><strong>B</strong><br>Macfarlane compares the question to a puzzle. He claims that there were about 20 different factors and all of them needed to be present before the revolution could happen. The chief conditions are to be found in history textbooks. <span id="qot-14-ref">For industry to ‘take off’, there needed to be the technology and power to drive factories, large urban populations to provide cheap labour, easy transport to move goods around, an affluent middle-class willing to buy mass-produced objects, a market-driven economy, and a political system that allowed this to happen.</span> While this was the case for England, other nations, such as Japan, Holland and France also met some of these criteria. All these factors must have been necessary but not sufficient to cause the revolution. Holland had everything except coal, while China also had many of these factors. Most historians, however, are convinced that one or two missing factors are needed to solve the puzzle.</p>
+              <p><strong>C</strong><br>The missing factors, he proposes, are to be found in every kitchen cupboard. <span id="qot-15-ref">Tea and beer, two of the nation’s favourite drinks, drove the revolution.</span> Tannin, the active ingredient in tea, and hops, used in making beer, both contain antiseptic properties. <span id="qot-22-ref">This, plus the fact that both are made with boiled water</span>, helped prevent epidemics of waterborne diseases, such as dysentery, in densely populated urban areas.</p>
+              <p><strong>D</strong><br>Historians had noticed one interesting factor around the mid-18th century that required explanation. Between about 1650 and 1740, the population was static. <span id="qot-16-ref">But then there was a burst in population. The infant mortality rate halved in the space of 20 years</span>, and this happened in both rural areas and cities, and across all classes. Four possible causes have been suggested. There could have been a sudden change in the viruses and bacteria present at that time, but this is unlikely. Was there a revolution in medical science? But this was a century before Lister introduced antiseptic surgery. Was there a change in environmental conditions? There were improvements in agriculture that wiped out malaria, but these were small gains. Sanitation did not become widespread until the 19th century. The only option left was food. But the height and weight statistics show a decline. So the food got worse. Efforts to explain this sudden reduction in child deaths appeared to draw a blank.</p>
+              <p><strong>E</strong><br>This population burst seemed to happen at just the right time to provide labour for the Industrial Revolution. But why? When the Industrial Revolution started, it was economically efficient to have people crowded together forming towns and cities. But with crowded living conditions comes disease, particularly from human waste. <span id="qot-17-ref"><span id="qot-21-ref">Some research in the historical records revealed that there was a change in the incidence of waterborne disease at that time, especially dysentery.</span></span> Macfarlane deduced that whatever the British were drinking must have been important in controlling disease. They drank beer and ale. For a long time, the English were protected by the strong antibacterial agent in hops, which were added to make beer last longer. <span id="qot-19-ref">But in the late 17th century a tax was introduced on malt.</span> The poor turned to water and gin, and in the 1720s the mortality rate began to rise again. Then it suddenly dropped again. What was the cause?</p>
+              <p><strong>F</strong><br>Macfarlane looked to Japan, which was also developing large cities about the same time, and also had no sanitation. Waterborne diseases in the Japanese population were far fewer than those in Britain. Could it be the prevalence of tea in their culture? That was when Macfarlane thought about the role of tea in Britain. <span id="qot-18-ref">The history of tea in Britain provided an extraordinary coincidence of dates. Tea was relatively expensive until Britain started direct trade with China in the early 18th century. By the 1740s, about the time that infant mortality was falling, the drink was common.</span> <span id="qot-20-ref"><span id="qot-23-ref">Macfarlane guesses that the fact that water had to be boiled, together with the stomach-purifying properties of tea so eloquently described in Buddhist texts, meant that the breast milk provided by mothers was healthier than it had ever been.</span></span> No other European nation drank tea so often as the British, which, by Macfarlane’s logic, pushed the other nations out of the race for the Industrial Revolution.</p>
+              <p><strong>G</strong><br>But, if tea is a factor in the puzzle, why didn’t this cause an industrial revolution in Japan? Macfarlane notes that in the 17th century, Japan had large cities, high literacy rates and even a futures market. <span id="qot-24-ref">However, Japan decided against a work-based revolution, by giving up labour-saving devices, even animals, to avoid putting people out of work.</span> Astonishingly, the nation that we now think of as one of the most technologically advanced, entered the 19th century having almost abandoned the wheel. While Britain was undergoing the Industrial Revolution, Macfarlane notes wryly, Japan was undergoing an industrious one.</p>
+              <p><strong>H</strong><br>The Cambridge academic considers the mystery solved. He adds that he thinks the UN should encourage aid agencies to take tea to the world’s troublespots, along with rehydration sachets and food rations.</p>
+
+              <hr class="my-5">
+
+              <h4 class="mb-3">READING PASSAGE 3</h4>
+              <h3>Team based learning</h3>
+              <p><span id="qot-27-ref">With the globalisation of information technology (IT) and worldwide access to the Internet, people from all areas of learning are finding themselves using some form of information technology in the workplace.</span> The corporate world has seen a boom in the use of IT tools, but conversely, <span id="qot-26-ref"><span id="qot-28-ref">not enough people with IT skills that can enter the workplace and be productive with minimal on-the-job training.</span></span></p>
+              <p>A recent issue of the New York Times reports that many companies are looking for smart students who may have a budding interest in IT. Some companies, trying to encourage students to attend interviews, provide good salary packages and challenging work environments. For example, one American IT consulting company <span id="qot-29-ref">offers high salaries, annual bonuses, and immediate stock options</span> to potential recruits. <span id="qot-31-ref">It also brings in 25 to 40 prospective applicants at a time</span> for a two-day visit to the company. <span id="qot-30-ref">This time includes interviews, team exercises and social events.</span> <span id="qot-32-ref">The idea behind the team exercises is that the applicants get to see that they will be working with other smart people doing really interesting things, rather than sitting alone writing code.</span></p>
+              <p>In the past 10 years, employers have seen marked benefits from collaborative projects in product development. Apart from the work environment, there is also a similar body of research indicating that small team-based instruction can lead to different kinds of desirable educational results. In order to prepare IT graduates to meet these workplace requirements, colleges and universities are also beginning to include team-based educational models.</p>
+              <p>One of the leaders in promoting team-based education is the American Intercontinental University (AIU), which has campuses worldwide. <span id="qot-33-ref">AIU offers programs in IT with a major portion of the curriculum based on team projects.</span> AIU has a large body of international students and students from different educational backgrounds. This team-based learning gives the students a sense of social and technical support within the group, and allows students firsthand experience of both potential successes and of inherent problems encountered when working with others.</p>
+              <p>Team-oriented instruction has not been the common mode of delivery in traditional college settings. However, since most college graduates who choose to go into an IT work environment will encounter some form of teamwork at work, it is to their advantage that they are educated using collaborative learning and that they are taught the tools needed to work with different people in achieving common goals or objectives.</p>
+              <p>In team-based learning, <span id="qot-34-ref">students spend a large part of their in-class time working in permanent and heterogeneous teams.</span> Most teams are made up of individuals with different socio-cultural backgrounds and varying skill levels. <span id="qot-35-ref">Team activities concentrate on using rather than just learning concepts</span>, whilst <span id="qot-36-ref"><span id="qot-38-ref">student grades are a combination of overall team performance and peer evaluation of individual team members.</span></span></p>
+              <p>In a team-based environment, the teacher takes on the role of a facilitator and manager of learning, instead of just providing information to passive students. The facilitator/teacher also guides the team in identifying their goals and establishing standards of team performance. Team exercises then help the students to improve their problem-solving skills by applying theory to simulated real-world situations. Working as a team allows students to adopt new roles and empowers them to control their own learning. Students in teams are taught to use each other as resources and accept the responsibility of managing tasks.</p>
+              <p>Team members must also study assigned material individually to ensure their preparation for classes. There are individual assessment tests to measure if students have not only read the assigned material, but also understand the concepts of the module, and can apply them to given problems. <span id="qot-40-ref">Additional team assessment tests present a problem for discussion and require consensus, helping students learn critical communication skills.</span> This also enables them to deal with conflicts between members before they escalate to crises. Team presentations (written or verbal) allow the team to focus and build cohesion, with team members sharing the responsibility for presenting and persuading the audience to accept their viewpoint. Feedback on how the team is functioning with task management, team dynamics and overall work is given by the facilitator. <span id="qot-39-ref">Team exercises that are application-oriented help students experience the practical application of concepts and learn from other students’ perspectives.</span></p>
+              <p><span id="qot-37-ref">Team-based classrooms are especially beneficial in colleges with international students.</span> Since this type of learning encourages people to listen and communicate with others, share problems, resolve personal conflicts, and manage their time and resources, it is a great environment for students who are in a new social situation. Since social interaction plays an important role during teamwork, team learning has an added advantage for students who are not comfortable in traditional classroom settings. It allows students from different cultures to understand their differences and use them productively. This type of learning environment also allows students to express themselves freely in a team context, rather than feeling singled out as when answering questions in a traditional classroom.</p>
+              <p>This learning model was designed to better prepare students for today’s global workplace. Students are encouraged to explore ideas together, to build communication skills and achieve superior results. It is likely that employers will increasingly seek out students with these skills as we move into the future.</p>
+              </div>
+            </div>
+
+            <!-- Right Column: Questions -->
+            <div class="col-lg-6">
+              <div class="reading-card questions-box">
+                
+                <h4 class="mb-4">Questions 1–2</h4>
+                <p class="text-muted mb-4">Choose the correct letter A–D.</p>
+
+                <!-- Q1 -->
+                <div class="question-item mb-3">
+                  <p class="mb-2"><strong>1.</strong> The researchers concluded that</p>
+                  <ul class="list-unstyled ms-3">
+                    <li>A. subjects underestimated the time spent ‘on hold’.</li>
+                    <li>B. it is better for companies not to use any ‘on-hold’ music.</li>
+                    <li>C. light jazz was the most acceptable music overall.</li>
+                    <li>D. both gender and type of music influence callers’ reaction.</li>
+                  </ul>
+                  <button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-1" aria-expanded="false" data-id="ot-1">Show Answer</button>
+                  <div class="collapse mt-2" id="ot-ans-1"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-1">Answer will appear here</span></div></div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="question-item mb-3">
+                  <p class="mb-2"><strong>2.</strong> The researchers recommended that</p>
+                  <ul class="list-unstyled ms-3">
+                    <li>A. their client continue to play alternative music.</li>
+                    <li>B. four types of music should be offered to people ‘on hold’.</li>
+                    <li>C. advertising is preferable to music.</li>
+                    <li>D. women can be kept waiting for longer than men.</li>
+                  </ul>
+                  <button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-2" aria-expanded="false" data-id="ot-2">Show Answer</button>
+                  <div class="collapse mt-2" id="ot-ans-2"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-2">Answer will appear here</span></div></div>
+                </div>
+
+                <hr class="my-5">
+
+                <h4 class="mb-4">Questions 3–7</h4>
+                <p class="text-muted mb-4">Choose the type of music from the list A–D below which corresponds to the findings of the study.</p>
+                <div class="border rounded p-3 mb-4">
+                  <ul class="list-unstyled">
+                    <li><strong>A</strong> light jazz</li>
+                    <li><strong>B</strong> alternative</li>
+                    <li><strong>C</strong> classical</li>
+                    <li><strong>D</strong> rock</li>
+                  </ul>
+                </div>
+
+                <div class="question-item mb-3">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <p class="mb-0">3. music preferred by men</p>
+                    <button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-3" aria-expanded="false" data-id="ot-3">Check</button>
+                  </div>
+                  <div class="collapse mt-2" id="ot-ans-3"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-3">Answer will appear here</span></div></div>
+                </div>
+                <div class="question-item mb-3">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <p class="mb-0">4. longest waiting time estimate (both sexes)</p>
+                    <button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-4" aria-expanded="false" data-id="ot-4">Check</button>
+                  </div>
+                  <div class="collapse mt-2" id="ot-ans-4"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-4">Answer will appear here</span></div></div>
+                </div>
+                <div class="question-item mb-3">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <p class="mb-0">5. music to avoid on telephone hold</p>
+                    <button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-5" aria-expanded="false" data-id="ot-5">Check</button>
+                  </div>
+                  <div class="collapse mt-2" id="ot-ans-5"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-5">Answer will appear here</span></div></div>
+                </div>
+                <div class="question-item mb-3">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <p class="mb-0">6. music to use if clients are mostly women</p>
+                    <button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-6" aria-expanded="false" data-id="ot-6">Check</button>
+                  </div>
+                  <div class="collapse mt-2" id="ot-ans-6"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-6">Answer will appear here</span></div></div>
+                </div>
+                <div class="question-item mb-3">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <p class="mb-0">7. best choice of ‘on-hold’ music overall</p>
+                    <button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-7" aria-expanded="false" data-id="ot-7">Check</button>
+                  </div>
+                  <div class="collapse mt-2" id="ot-ans-7"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-7">Answer will appear here</span></div></div>
+                </div>
+
+                <hr class="my-5">
+
+                <h4 class="mb-4">Questions 8–13</h4>
+                <p class="text-muted mb-4">Do the following statements agree with the claims of the writer? Write YES, NO, or NOT GIVEN.</p>
+                
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">8. Businesses want to minimise the time spent ‘on hold’.</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-8" data-id="ot-8">Check</button></div><div class="collapse mt-2" id="ot-ans-8"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-8">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">9. The research sample consisted of real clients of a company.</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-9" data-id="ot-9">Check</button></div><div class="collapse mt-2" id="ot-ans-9"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-9">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">10. The sample consisted of equal numbers of men and women.</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-10" data-id="ot-10">Check</button></div><div class="collapse mt-2" id="ot-ans-10"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-10">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">11. Advertising is considered a poor alternative to ‘on-hold’ music.</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-11" data-id="ot-11">Check</button></div><div class="collapse mt-2" id="ot-ans-11"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-11">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">12. The consumer service company surveyed was playing classical music.</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-12" data-id="ot-12">Check</button></div><div class="collapse mt-2" id="ot-ans-12"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-12">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">13. Researchers asked subjects only to estimate the length of time they waited ‘on hold’.</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-13" data-id="ot-13">Check</button></div><div class="collapse mt-2" id="ot-ans-13"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-13">Answer will appear here</span></div></div></div>
+
+                <hr class="my-5">
+
+                <h4 class="mb-4">Questions 14–18</h4>
+                <p class="text-muted mb-4">Choose the most suitable headings for paragraphs B–F from the list of headings below.</p>
+                <div class="border rounded p-3 mb-4">
+                  <p class="fw-bold">List of Headings</p>
+                  <ul class="list-unstyled">
+                    <li><strong>i</strong> The significance of tea drinking</li>
+                    <li><strong>ii</strong> Possible solution to the puzzle</li>
+                    <li><strong>iii</strong> Industry in Holland and France</li>
+                    <li><strong>iv</strong> Significant population increase</li>
+                    <li><strong>v</strong> The relationship between drinks and disease</li>
+                    <li><strong>vi</strong> Gin drinking and industrialisation</li>
+                    <li><strong>vii</strong> Dysentery prevention in Japan and Holland</li>
+                    <li><strong>viii</strong> Japan’s waterborne diseases</li>
+                    <li><strong>ix</strong> Preconditions necessary for Industrial Revolution</li>
+                    <li><strong>x</strong> Introduction</li>
+                  </ul>
+                </div>
+
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">14. Section B</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-14" data-id="ot-14">Check</button></div><div class="collapse mt-2" id="ot-ans-14"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-14">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">15. Section C</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-15" data-id="ot-15">Check</button></div><div class="collapse mt-2" id="ot-ans-15"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-15">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">16. Section D</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-16" data-id="ot-16">Check</button></div><div class="collapse mt-2" id="ot-ans-16"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-16">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">17. Section E</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-17" data-id="ot-17">Check</button></div><div class="collapse mt-2" id="ot-ans-17"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-17">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">18. Section F</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-18" data-id="ot-18">Check</button></div><div class="collapse mt-2" id="ot-ans-18"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-18">Answer will appear here</span></div></div></div>
+
+                <hr class="my-5">
+
+                <h4 class="mb-4">Questions 19–22</h4>
+                <p class="text-muted mb-4">Complete the table using NO MORE THAN THREE WORDS from the passage.</p>
+                <div class="table-responsive mb-4">
+                  <table class="table table-bordered table-sm" style="font-size: 0.9rem;">
+                    <thead class="table-light">
+                      <tr><th>Century</th><th>Social change in Britain</th><th>Reason</th><th>Effect on population</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Mid 17th century</td><td>main drinks were still beer and ale</td><td>hops helped to make beer last longer</td><td>no significant change</td></tr>
+                      <tr><td>Late 17th century</td><td>gin becomes more popular</td><td>beer becomes expensive because of <strong>(19)</strong>...</td><td>mortality rate goes up</td></tr>
+                      <tr><td>Early 18th century</td><td><strong>(20)</strong>... drinking starts to become widespread</td><td>Britain starts trade with China</td><td>mortality rate goes down</td></tr>
+                      <tr><td>Mid 18th century</td><td>decline in urban deaths caused by <strong>(21)</strong>...</td><td><strong>(22)</strong>... water used for tea and beer</td><td>infant mortality rate goes down by half</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">19.</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-19" data-id="ot-19">Check</button></div><div class="collapse mt-2" id="ot-ans-19"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-19">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">20.</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-20" data-id="ot-20">Check</button></div><div class="collapse mt-2" id="ot-ans-20"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-20">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">21.</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-21" data-id="ot-21">Check</button></div><div class="collapse mt-2" id="ot-ans-21"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-21">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">22.</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-22" data-id="ot-22">Check</button></div><div class="collapse mt-2" id="ot-ans-22"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-22">Answer will appear here</span></div></div></div>
+
+                <hr class="my-5">
+
+                <h4 class="mb-4">Questions 23–25</h4>
+                <p class="text-muted mb-4">Choose the correct letter A–D.</p>
+                
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">23. In 1740 there was a population explosion in Britain because...</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-23" data-id="ot-23">Check</button></div><div class="collapse mt-2" id="ot-ans-23"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-23">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">24. According to the author, the Japanese did not industrialise because they didn’t...</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-24" data-id="ot-24">Check</button></div><div class="collapse mt-2" id="ot-ans-24"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-24">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">25. Macfarlane thinks he has discovered why...</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-25" data-id="ot-25">Check</button></div><div class="collapse mt-2" id="ot-ans-25"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-25">Answer will appear here</span></div></div></div>
+
+                <hr class="my-5">
+
+                <h4 class="mb-4">Questions 26–32</h4>
+                <p class="text-muted mb-4">Complete the summary below. Choose your answers from the box below the summary.</p>
+                <p>Although IT is one of the leading career choice made by graduates today, the industry’s demand for qualified applicants <button class="btn btn-link q-link-toggle p-0" data-id="ot-26">(26)</button> the supply of skilled IT personnel. Despite the <button class="btn btn-link q-link-toggle p-0" data-id="ot-27">(27)</button> widespread use of computer technology in all areas of life, <button class="btn btn-link q-link-toggle p-0" data-id="ot-28">(28)</button> face difficulties recruiting people whose education has equipped them to commence working productively without further training. Several business organisations now offer income and other <button class="btn btn-link q-link-toggle p-0" data-id="ot-29">(29)</button> inducements to potential employees. They also include group <button class="btn btn-link q-link-toggle p-0" data-id="ot-30">(30)</button> in their selection procedures, often inviting up to forty <button class="btn btn-link q-link-toggle p-0" data-id="ot-31">(31)</button> to their company for the two-day visit. In this way the company can demonstrate the reality of the working <button class="btn btn-link q-link-toggle p-0" data-id="ot-32">(32)</button> which is more likely to involve challenging co-operative projects than individualised tasks.</p>
+
+                <div id="ot-summary-answers" class="mt-3">
+                  <div class="collapse" id="ans-ot-26"><div class="card card-body bg-light py-2 mb-2"><strong>Q26:</strong> <span class="ans-content" data-id="ot-26">Answer will appear here</span></div></div>
+                  <div class="collapse" id="ans-ot-27"><div class="card card-body bg-light py-2 mb-2"><strong>Q27:</strong> <span class="ans-content" data-id="ot-27">Answer will appear here</span></div></div>
+                  <div class="collapse" id="ans-ot-28"><div class="card card-body bg-light py-2 mb-2"><strong>Q28:</strong> <span class="ans-content" data-id="ot-28">Answer will appear here</span></div></div>
+                  <div class="collapse" id="ans-ot-29"><div class="card card-body bg-light py-2 mb-2"><strong>Q29:</strong> <span class="ans-content" data-id="ot-29">Answer will appear here</span></div></div>
+                  <div class="collapse" id="ans-ot-30"><div class="card card-body bg-light py-2 mb-2"><strong>Q30:</strong> <span class="ans-content" data-id="ot-30">Answer will appear here</span></div></div>
+                  <div class="collapse" id="ans-ot-31"><div class="card card-body bg-light py-2 mb-2"><strong>Q31:</strong> <span class="ans-content" data-id="ot-31">Answer will appear here</span></div></div>
+                  <div class="collapse" id="ans-ot-32"><div class="card card-body bg-light py-2 mb-2"><strong>Q32:</strong> <span class="ans-content" data-id="ot-32">Answer will appear here</span></div></div>
+                </div>
+
+                <div class="border rounded p-3 mb-4">
+                  <p class="fw-bold">List of words</p>
+                  <ul class="list-unstyled row row-cols-3 g-2">
+                    <li class="col">Exceeds</li><li class="col">Extracts</li><li class="col">Choices</li>
+                    <li class="col">Candidates</li><li class="col">Employees</li><li class="col">Admiration</li>
+                    <li class="col">Previous</li><li class="col">Financial</li><li class="col">Employment</li>
+                    <li class="col">Regularity</li><li class="col">Advantages</li><li class="col">Employers</li>
+                    <li class="col">Environment</li><li class="col">Activities</li><li class="col">Current</li>
+                  </ul>
+                </div>
+
+                <hr class="my-5">
+
+                <h4 class="mb-4">Questions 33–37</h4>
+                <p class="text-muted mb-4">Do the following statements reflect the views of the writer? Write YES, NO, or NOT GIVEN.</p>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">33. The American Intercontinental University includes team-based learning in all its courses on all its campuses.</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-33" data-id="ot-33">Check</button></div><div class="collapse mt-2" id="ot-ans-33"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-33">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">34. The composition of teams is changed regularly.</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-34" data-id="ot-34">Check</button></div><div class="collapse mt-2" id="ot-ans-34"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-34">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">35. Theoretical problems are the most important team activity.</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-35" data-id="ot-35">Check</button></div><div class="collapse mt-2" id="ot-ans-35"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-35">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">36. The team members participate in assessment of other team members.</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-36" data-id="ot-36">Check</button></div><div class="collapse mt-2" id="ot-ans-36"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-36">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">37. International students prefer traditional classroom learning to team-based learning.</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-37" data-id="ot-37">Check</button></div><div class="collapse mt-2" id="ot-ans-37"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-37">Answer will appear here</span></div></div></div>
+
+                <hr class="my-5">
+
+                <h4 class="mb-4">Questions 38–40</h4>
+                <p class="text-muted mb-4">Choose one phrase from the list of phrases A–H below to complete each of the following sentences.</p>
+                <div class="border rounded p-3 mb-4">
+                  <ul class="list-unstyled">
+                    <li><strong>A</strong> to compete with other teams as judged by the facilitator.</li>
+                    <li><strong>B</strong> by individual tests and exams.</li>
+                    <li><strong>C</strong> to see who has the strongest point of view in the group.</li>
+                    <li><strong>D</strong> individually, by their peers and as a team.</li>
+                    <li><strong>E</strong> in the development of communication skills.</li>
+                    <li><strong>F</strong> to practise working as a group while putting theory into practice.</li>
+                    <li><strong>G</strong> to assist international and non-traditional students.</li>
+                    <li><strong>H</strong> in getting to know new friends and colleagues.</li>
+                  </ul>
+                </div>
+
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">38. Students’ work is assessed...</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-38" data-id="ot-38">Check</button></div><div class="collapse mt-2" id="ot-ans-38"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-38">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">39. The teams make a joint presentation...</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-39" data-id="ot-39">Check</button></div><div class="collapse mt-2" id="ot-ans-39"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-39">Answer will appear here</span></div></div></div>
+                <div class="question-item mb-3"><div class="d-flex align-items-center justify-content-between"><p class="mb-0">40. The need to achieve consensus assists...</p><button class="btn btn-primary btn-sm q-btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ot-ans-40" data-id="ot-40">Check</button></div><div class="collapse mt-2" id="ot-ans-40"><div class="card card-body bg-light py-2"><span class="ans-content" data-id="ot-40">Answer will appear here</span></div></div></div>
+
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
 
   </main>
-
-  <footer id="footer" class="footer position-relative light-background">
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">IELTS Prep</strong> <span>All Rights Reserved</span></p>
-    </div>
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -512,6 +852,48 @@
   <script src="assets/js/reading-data.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // --- Password and Selection Logic ---
+      const authOverlay = document.getElementById('auth-overlay');
+      const selectionOverlay = document.getElementById('selection-overlay');
+      const passwordInput = document.getElementById('password-input');
+      const btnLogin = document.getElementById('btn-login');
+      const loginError = document.getElementById('login-error');
+      const btnCam6 = document.getElementById('btn-cam6');
+      const btnOntrack = document.getElementById('btn-ontrack');
+      const testTitleDisplay = document.getElementById('test-title-display');
+
+      function checkPassword() {
+        if (passwordInput.value === "VII I MMVI") {
+          authOverlay.classList.add('d-none');
+          authOverlay.classList.remove('d-flex');
+          selectionOverlay.classList.remove('d-none');
+          selectionOverlay.classList.add('d-flex');
+        } else {
+          loginError.classList.remove('d-none');
+        }
+      }
+
+      btnLogin.addEventListener('click', checkPassword);
+      passwordInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') checkPassword();
+      });
+
+      btnCam6.addEventListener('click', () => {
+        selectionOverlay.classList.add('d-none');
+        selectionOverlay.classList.remove('d-flex');
+        document.getElementById('test-cam6').classList.remove('d-none');
+        document.getElementById('test-ontrack').classList.add('d-none');
+        if(testTitleDisplay) testTitleDisplay.textContent = 'CAM 6 TEST 2';
+      });
+
+      btnOntrack.addEventListener('click', () => {
+        selectionOverlay.classList.add('d-none');
+        selectionOverlay.classList.remove('d-flex');
+        document.getElementById('test-cam6').classList.add('d-none');
+        document.getElementById('test-ontrack').classList.remove('d-none');
+        if(testTitleDisplay) testTitleDisplay.textContent = 'IELTS ON TRACK TEST 2';
+      });
+
       // Mock data for demonstration purposes since reading-data.js is not available in context
       const mockAnswers = {
         1: "ii", 2: "vii", 3: "iv", 4: "i", 5: "iii",
@@ -520,7 +902,16 @@
         14: "B", 15: "I", 16: "F", 17: "M", 18: "J", 19: "N", 20: "K", 21: "G", 22: "A",
         23: "G", 24: "E", 25: "H", 26: "C",
         27: "B", 28: "E", 29: "A", 30: "C", 31: "G",
-        32: "TRUE", 33: "FALSE", 34: "TRUE", 35: "FALSE", 36: "TRUE", 37: "TRUE", 38: "FALSE", 39: "TRUE", 40: "NOT GIVEN"
+        32: "TRUE", 33: "FALSE", 34: "TRUE", 35: "FALSE", 36: "TRUE", 37: "TRUE", 38: "FALSE", 39: "TRUE", 40: "NOT GIVEN",
+        // IELTS ON TRACK TEST 2
+        "ot-1": "D", "ot-2": "A", "ot-3": "C", "ot-4": "D", "ot-5": "D", "ot-6": "A", "ot-7": "B",
+        "ot-8": "YES", "ot-9": "YES", "ot-10": "NO", "ot-11": "NOT GIVEN", "ot-12": "NO", "ot-13": "NO",
+        "ot-14": "ix", "ot-15": "ii", "ot-16": "iv", "ot-17": "v", "ot-18": "i",
+        "ot-19": "tax on malt", "ot-20": "Tea", "ot-21": "waterborne diseases", "ot-22": "boiled",
+        "ot-23": "C", "ot-24": "D", "ot-25": "B",
+        "ot-26": "Exceeds", "ot-27": "Current", "ot-28": "Employers", "ot-29": "Financial", "ot-30": "Activities", "ot-31": "Candidates", "ot-32": "Environment",
+        "ot-33": "NO", "ot-34": "NO", "ot-35": "NO", "ot-36": "YES", "ot-37": "NOT GIVEN",
+        "ot-38": "D", "ot-39": "F", "ot-40": "E"
       };
 
       // Handle Question Button Clicks
@@ -533,17 +924,11 @@
 
           // 1. Populate Answer (if not already populated)
           const ansContainer = document.querySelector(`.ans-content[data-id="${id}"]`);
-          if (ansContainer && ansContainer.innerText === "Answer will appear here") {
+          const currentText = ansContainer ? ansContainer.textContent.trim() : '';
+
+          if (ansContainer && (currentText === "Answer will appear here" || currentText === "Answer...")) {
             // Try to get data from mock or global object if exists
             if (typeof readingData !== 'undefined' && readingData[id]) {
-              ansContainer.innerHTML = readingData[id].explanation.replace(/\n/g, '<br>');
-            } else {
-              ansContainer.innerText = mockAnswers[id] || "Answer Key";
-            }
-          }
-          // Also handle the summary answers which have a different placeholder
-          if (ansContainer && ansContainer.innerText === "Answer...") {
-             if (typeof readingData !== 'undefined' && readingData[id]) {
               ansContainer.innerHTML = readingData[id].explanation.replace(/\n/g, '<br>');
             } else {
               ansContainer.innerText = mockAnswers[id] || "Answer Key";
@@ -555,9 +940,8 @@
             const targetId = '#ans-' + id;
             const target = document.querySelector(targetId);
             if (target) {
-              // Close other open collapses in summary section to keep it clean? 
-              // Or let them stack. Let's let them stack for now or toggle.
-              const bsCollapse = new bootstrap.Collapse(target, { toggle: true });
+              const bsCollapse = bootstrap.Collapse.getOrCreateInstance(target, { toggle: false });
+              bsCollapse.toggle();
             }
           }
 
