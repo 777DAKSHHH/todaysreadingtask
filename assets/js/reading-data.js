@@ -897,5 +897,126 @@ So, the answer is: <b>F</b>`
 <b>Paragraph 8</b> lines <b>5-6</b> ("Additional team assessment tests present a problem........") explains consensus builds communication skills.
 <br><br>
 So, the answer is: <b>E</b>`
+  },
+  // CAM 16 Test 1 Explanations
+  "c16-1": {
+    "explanation": "<h4>Question 1</h4><b>Polar bears suffer from various health problems due to the build-up of fat under their skin.</b><br><br><b>Keywords:</b> polar bears, suffer from, various health problems, due to, build-up, fat, under, skin<br><br>In paragraph 1, lines 3-6: 'One reason for this is that they have up to 11 centimetres of fat underneath their skin. Humans with comparative levels of adipose tissue would be considered obese and would be likely to suffer from diabetes and heart disease. Yet the polar bear experiences no such consequences.'<br><br>This means humans suffer from various health problems due to the build-up of fat under their skin; NOT the polar bears.<br><br>So, the answer is: <b>FALSE</b>"
+  },
+  "c16-2": {
+    "explanation": "<h4>Question 2</h4><b>The study done by Liu and his colleagues compared different groups of polar bears.</b><br><br><b>Keywords:</b> study, Liu and his colleagues, compared, different groups, polar bears<br><br>Lines 1-2 of paragraph 2 say, 'They compared the genetic structure of polar bears with that of their closest relatives from a warmer climate, the brown bears.'<br><br>Here, the lines suggest that the study compared polar bears with brown bears; NOT different groups of polar bears.<br><br>So, the answer is: <b>FALSE</b>"
+  },
+  "c16-3": {
+    "explanation": "<h4>Question 3</h4><b>Liu and his colleagues were the first researchers to compare polar bears and brown bears genetically.</b><br><br><b>Keywords:</b> Liu and his colleagues, first researchers, compare, polar bears, brown bears, genetically<br><br>The passage contains NO INFORMATION on whether Liu and his colleagues were the first researchers to compare polar bears and brown bears genetically.<br><br>So, the answer is: <b>NOT GIVEN</b>"
+  },
+  "c16-4": {
+    "explanation": "<h4>Question 4</h4><b>Polar bears are able to control their levels of ‘bad’ cholesterol by genetic means.</b><br><br><b>Keywords:</b> polar bears, able to control, levels, ‘bad’ cholesterol, genetic means<br><br>In paragraph 2, lines 4-5: 'Liu and his colleagues found the polar bears had a gene known as APoB, which reduces levels of low-density lipoproteins (LDLs) – a form of ‘bad’ cholesterols.' Here, had a gene known as APoB = genetic means, reduces levels = control levels.<br><br>So, the answer is: <b>TRUE</b>"
+  },
+  "c16-5": {
+    "explanation": "<h4>Question 5</h4><b>Female polar bears are able to survive for about six months without food.</b><br><br><b>Keywords:</b> female polar bears, able to survive, about six months, without food<br><br>In paragraph 3, lines 5-9: 'Female polar bears, however, undergo extreme conditions during every pregnancy. Once autumn comes around, these females will dig maternity dens in the snow and will remain there throughout the winter, both before and after the birth of their cubs. This process results in about six months of fasting...' Here, six months of fasting = six months without food.<br><br>So, the answer is: <b>TRUE</b>"
+  },
+  "c16-6": {
+    "explanation": "<h4>Question 6</h4><b>It was found that the bones of female polar bears were very weak when they came out of their dens in spring.</b><br><br><b>Keywords:</b> found, bones of female polar bears, very weak, came out, their dens, spring<br><br>In paragraph 3, lines 5-10: 'Female polar bears, however, undergo extreme conditions during every pregnancy... This process results in about six months of fasting... Despite this, their bones remain strong and dense.' This suggests their bones remain strong and dense when they come out of their dens in spring.<br><br>So, the answer is: <b>FALSE</b>"
+  },
+  "c16-7": {
+    "explanation": "<h4>Question 7</h4><b>The polar bear’s mechanism for increasing bone density could also be used by people one day.</b><br><br><b>Keywords:</b> polar bear’s mechanism, increasing bone density, also, used by people, one day<br><br>At the end of paragraph 4: 'If the mechanism of bone remodelling in polar bears can be understood, many bedridden humans, and even astronauts, could potentially benefit.' Here, mechanism of bone remodelling = mechanism for increasing bone density, potentially benefit = could also be used by people one day.<br><br>So, the answer is: <b>TRUE</b>"
+  },
+  "c16-8": {
+    "explanation": "<h4>Question 8</h4><b>People think of bears as unintelligent and ______ .</b><br><br><b>Keywords:</b> people think, bears, unintelligent<br><br>In lines 3-4 of paragraph 5: 'We tend to want to protect animals we think are intelligent and possess emotions, such as elephants and primates. Bears, on the other hand, seem to be perceived as stupid and in many cases violent.' Here, seem to be perceived = people think, stupid = unintelligent.<br><br>So, the answer is: <b>violent</b>"
+  },
+  "c16-9": {
+    "explanation": "<h4>Question 9</h4><b>In Tennoji Zoo, a bear has been seen using a branch as a ______ .</b><br><br><b>Keywords:</b> Tennoji Zoo, bear, seen, using a branch<br><br>In paragraph 5, lines 5-8: 'A male bear called GoGo in Tennoji Zoo, Osaka, has even been observed making use of a tool to manipulate his environment. The bear used a tree branch on multiple occasions...' branch = branch, making use of a tool = using a branch as a tool.<br><br>So, the answer is: <b>tool</b>"
+  },
+  "c16-10": {
+    "explanation": "<h4>Question 10</h4><b>This allowed him to knock down some ______ .</b><br><br><b>Keywords:</b> allowed, knock down, some<br><br>In paragraph 5, lines 7-8: 'The bear used a tree branch on multiple occasions to dislodge a piece of meat hung out of his reach.' Here, to dislodge = to knock down.<br><br>So, the answer is: <b>meat</b>"
+  },
+  "c16-11": {
+    "explanation": "<h4>Question 11</h4><b>A wild polar bear worked out a method of reaching a platform where a ______ was located.</b><br><br><b>Keywords:</b> wild polar bear, worked out, method, reaching a platform, located<br><br>At the end of paragraph 5: 'A calculated move by a male bear involved running and jumping onto barrels in an attempt to get to a photographer standing on a platform four metres high.' Here, calculated move = worked out method, get to = reaching.<br><br>So, the answer is: <b>photographer</b>"
+  },
+  "c16-12": {
+    "explanation": "<h4>Question 12</h4><b>Polar bears have displayed behaviour such as conscious manipulation of objects and activity similar to a ______ .</b><br><br><b>Keywords:</b> Polar bears, displayed, behaviour, conscious manipulation, objects and activity, similar to<br><br>In paragraph 6, lines 1-3: 'polar bears showed deliberate and focussed manipulation. For example, Ames observed bears putting objects in piles and then knocking them over in what appeared to be a game.' Here, deliberate and focussed = conscious, what appeared to be = similar to.<br><br>So, the answer is: <b>game</b>"
+  },
+  "c16-13": {
+    "explanation": "<h4>Question 13</h4><b>They may make movements suggesting ______ if disappointed when hunting.</b><br><br><b>Keywords:</b> display emotions, may make movements, suggesting, if disappointed, when hunting<br><br>In paragraph 7, lines 1-3: 'As for emotions, while the evidence is once again anecdotal, many bears have been seen to hit out at ice and snow – seemingly out of frustration – when they have just missed out on a kill.' Here, hit out at ice/snow = make movements, missed out on a kill = disappointed when hunting.<br><br>So, the answer is: <b>frustration</b>"
+  },
+  "c16-14": {
+    "explanation": "<h4>Question 14: Paragraph A</h4><b>Heading Selection</b><br><br>In lines 4-7 of paragraph A: 'The evolution of the pyramid form has been written and argued about for centuries. However, there is no question that, as far as Egypt is concerned, it began with one monument to one king designed by one brilliant architect: the Step Pyramid of Djoser at Saqqara.' Here, argued about for centuries = less definite facts, no question that = single certainty.<br><br>So, the answer is: <b>iv (A single certainty among other less definite facts)</b>"
+  },
+  "c16-15": {
+    "explanation": "<h4>Question 15: Paragraph B</h4><b>Heading Selection</b><br><br>In paragraph B, lines 2-7: 'Prior to Djoser’s reign, tombs were rectangular monuments made of dried clay brick, which covered underground passages where the deceased person was buried. For reasons which remain unclear, Djoser’s main official, whose name was Imhotep, conceived of building a taller, more impressive tomb for his king by stacking stone slabs...' Conceived of building taller tomb = An idea for changing the design of burial structures.<br><br>So, the answer is: <b>vii (An idea for changing the design of burial structures)</b>"
+  },
+  "c16-16": {
+    "explanation": "<h4>Question 16: Paragraph C</h4><b>Heading Selection</b><br><br>In lines 6-7 of Paragraph C: 'The weight of the enormous mass was a challenge for the builders...' challenge = difficult task, builders = those involved.<br><br>So, the answer is: <b>ii (A difficult task for those involved)</b>"
+  },
+  "c16-17": {
+    "explanation": "<h4>Question 17: Paragraph D</h4><b>Heading Selection</b><br><br>Lines 1-5 of Paragraph D describe the overview of the external structures: 'When finally completed, the Step Pyramid rose 62 meters high and was the tallest structure of its time. The complex in which it was built was the size of a city in ancient Egypt and included a temple, courtyards, shrines, and living quarters... wall 10.5 meters high.'<br><br>So, the answer is: <b>v (An overview of the external buildings and areas)</b>"
+  },
+  "c16-18": {
+    "explanation": "<h4>Question 18: Paragraph E</h4><b>Heading Selection</b><br><br>Lines 1-6 of Paragraph E describe the interior of the pyramid: 'The burial chamber of the tomb... surrounded by a vast maze of long tunnels... stone vessels... discovered in storerooms off the pyramid's underground passages.' This covers areas within the pyramid and artefacts.<br><br>So, the answer is: <b>i (The areas and artefacts within the pyramid itself)</b>"
+  },
+  "c16-19": {
+    "explanation": "<h4>Question 19: Paragraph F</h4><b>Heading Selection</b><br><br>Lines 2-6 of Paragraph F: 'Djoser’s grave goods, and even the body, were stolen at some point in the past and all archaeologists found were a small number of his valuables overlooked by the thieves. There was enough left throughout the pyramid and its complex, however, to astonish and amaze the archaeologists...' all they found was a small number = few remains, astonish and amaze = incredible experience.<br><br>So, the answer is: <b>viii (An incredible experience despite the few remains)</b>"
+  },
+  "c16-20": {
+    "explanation": "<h4>Question 20: Paragraph G</h4><b>Heading Selection</b><br><br>In paragraph G, final lines: 'The Step Pyramid was a revolutionary advance in architecture and became the archetype which all the other great pyramid builders of Egypt would follow.' archetype to follow = design copied by others.<br><br>So, the answer is: <b>vi (A pyramid design that others copied)</b>"
+  },
+  "c16-21": {
+    "explanation": "<h4>Question 21</h4><b>The complex was as big as an Egyptian ______ of the past.</b><br><br><b>Keywords:</b> complex, Step Pyramid, surroundings, considered to be, as big as, Egyptian, of the past<br><br>In Paragraph D, lines 2-3: 'The complex in which it was built was the size of a city in ancient Egypt...' size = big, ancient = past.<br><br>So, the answer is: <b>city</b>"
+  },
+  "c16-22": {
+    "explanation": "<h4>Question 22</h4><b>...included accommodation that was occupied by ______</b><br><br><b>Keywords:</b> area, outside the pyramid, accommodation, occupied by, many other buildings and features<br><br>Lines 3-4 of Paragraph D: '...and included a temple, courtyards, shrines, and living quarters for the priests.' living quarters = accommodation occupied by.<br><br>So, the answer is: <b>priests</b>"
+  },
+  "c16-23": {
+    "explanation": "<h4>Question 23</h4><b>...In addition, a long ______ encircled the wall.</b><br><br><b>Keywords:</b> wall, ran around, outside, complex, false entrances, in addition, long, encircled, wall<br><br>Lines 4-7 of Paragraph D: 'was surrounded by a wall 10.5 meters high... the entire wall was then ringed by a trench 750 meters long...' ringed = encircled.<br><br>So, the answer is: <b>trench</b>"
+  },
+  "c16-24": {
+    "explanation": "<h4>Question 24</h4><b>...unless they knew the ______ of the real entrance.</b><br><br><b>Keywords:</b> visitors, prevented, unless, knew, real entrance<br><br>Lines 7-9 of Paragraph D: 'The false doors and the trench were incorporated into the complex to discourage unwanted visitors. If someone wished to enter, he or she would have needed to know in advance how to find the location of the true opening...' true opening = real entrance.<br><br>So, the answer is: <b>location</b>"
+  },
+  "c16-25": {
+    "explanation": "<h4>Question 25 & 26 (Select Two)</h4><b>Points made about King Djoser:</b><br><br><b>Keywords:</b> TWO, about King Djoser<br><br>In Paragraph B, lines 7-9: 'Djoser is thought to have reigned for 19 years, but some historians and scholars attribute a much longer time for his rule...' (reign length disagreement - B).<br>In Paragraph F, lines 2-4: 'Djoser’s grave goods, and even his body, were stolen... all archaeologists found were a small number of his valuables overlooked by the thieves' (possessions remained in tomb - D).<br><br>So, the answers are: <b>B</b> and <b>D</b>"
+  },
+  "c16-26": {
+    "explanation": "<h4>Question 25 & 26 (Select Two)</h4><b>Points made about King Djoser:</b><br><br>See explanation for Question 25.<br><br>So, the answers are: <b>B</b> and <b>D</b>"
+  },
+  "c16-27": {
+    "explanation": "<h4>Question 27</h4><b>The first paragraph tells us about ______</b><br><br><b>Keywords:</b> first paragraph<br><br>In paragraph 1, lines 1-3: 'According to a leading business consultancy, 3-14% of the global workforce will need to switch to a different occupation within the next 10-15 years, and all workers will need to adapt as their occupations evolve...' workforce switch/adapt = extent to which AI will alter the nature of work.<br><br>So, the answer is: <b>B (the extent to which AI will alter the nature of the work that people do.)</b>"
+  },
+  "c16-28": {
+    "explanation": "<h4>Question 28</h4><b>Stella Pachidi's view of the 'knowledge economy':</b><br><br><b>Keywords:</b> second paragraph, Stella Pachidi’s view, ‘knowledge economy’<br><br>In paragraph 2, lines 1-4: 'Dr Stella Pachidi from Cambridge Judge Business School believes that some of the most fundamental changes are happening as a result of the ‘algorithmication’ of jobs that are dependent on data rather than on production – the so-called knowledge economy.' fundamental changes = current developments in the workplace.<br><br>So, the answer is: <b>D (It is a key factor driving current developments in the workplace.)</b>"
+  },
+  "c16-29": {
+    "explanation": "<h4>Question 29</h4><b>What did Pachidi observe at the telecommunications company?</b><br><br><b>Keywords:</b> Pachidi, observe, telecommunications company<br><br>In paragraph 5, lines 4-6: 'However, the company had started using a(n) … algorithm that defined when account managers should contact certain customers about which kinds of campaigns and what to offer them.' algorithm = AI, account managers = staff, what to offer them = produces results they want.<br><br>So, the answer is: <b>C (staff making sure that AI produces the results that they want.)</b>"
+  },
+  "c16-30": {
+    "explanation": "<h4>Question 30</h4><b>In his recently published research, Ewan McGaughey ______</b><br><br><b>Keywords:</b> recently published research, Ewan McGaughey<br><br>In paragraph 12, lines 1-3: 'His recently published research answers the question of whether automation, AI and robotics will mean a ‘jobless future’... History is clear that change can mean redundancies. But social policies can tackle this through retraining and redeployment.' redundancies = joblessness, social policies can tackle = changes successfully handled.<br><br>So, the answer is: <b>D (illustrates how changes in the job market can be successfully handled.)</b>"
+  },
+  "c16-31": {
+    "explanation": "<h4>Question 31</h4><b>Jobs which rely not on production but on ______ .</b><br><br><b>Keywords:</b> Stella Pachidi, focusing on, 'algorithmication' of jobs, rely, not on production<br><br>In paragraph 2, lines 1-4: 'jobs that are dependent on data rather than on production...' dependent on = rely on, data = information (G).<br><br>So, the answer is: <b>G (information)</b>"
+  },
+  "c16-32": {
+    "explanation": "<h4>Question 32</h4><b>...observed a growing ______ on recommendations made by AI</b><br><br><b>Keywords:</b> monitoring, telecommunications company, Pachidi observed, growing, recommendations, 'algorithm's eyes'<br><br>In paragraph 6, lines 3-4: 'Pachidi believes, a short-sighted view begins to creep into working practices whereby workers learn through the ‘algorithm’s eyes’ and become dependent on its instructions.' dependent = reliance (E).<br><br>So, the answer is: <b>E (reliance)</b>"
+  },
+  "c16-33": {
+    "explanation": "<h4>Question 33</h4><b>... deterred from experimenting and using their own ______</b><br><br><b>Keywords:</b> staff, deterred, experimenting, own, prevented, achieving innovation<br><br>In paragraph 6, final lines: 'Alternative explorations – where experimentation and human instinct lead to progress and new ideas – are effectively discouraged.' instinct = intuition (C), discouraged = prevented.<br><br>So, the answer is: <b>C (intuition)</b>"
+  },
+  "c16-34": {
+    "explanation": "<h4>Question 34</h4><b>...to increase users' ______ with regard to technology.</b><br><br><b>Keywords:</b> avoid, researchers, trying to make, AI's decision-making process, comprehend, increase, users', technology<br><br>In paragraph 8, lines 1-3: 'Their objective is to make AI technologies more trustworthy and transparent, so that organisations and individuals understand how AI decisions are made.' trustworthy/transparent = comprehend, understand = increase confidence (F).<br><br>So, the answer is: <b>F (confidence)</b>"
+  },
+  "c16-35": {
+    "explanation": "<h4>Question 35</h4><b>Greater levels of automation will not result in lower employment.</b><br><br><b>Keywords:</b> greater levels of automation, not result in, lower employment<br><br>In paragraph 10, lines 1-4 (Hamish Low): 'On the subject of job losses, Low believes the predictions are founded on a fallacy: ‘It assumes that the number of jobs is fixed... The number of jobs will increase: we would expect that to be 150 jobs.'<br><br>So, the answer is: <b>B (Hamish Low)</b>"
+  },
+  "c16-36": {
+    "explanation": "<h4>Question 36</h4><b>There are several reasons why AI is appealing to businesses.</b><br><br><b>Keywords:</b> several reasons, why, AI, appearing to businesses<br><br>In paragraph 2 and 3 (Stella Pachidi): 'Algorithms are capable of learning from data to undertake tasks... Organisations are attracted to using algorithms because they want to make choices based on... perfect information, as well as to reduce costs and enhance productivity.'<br><br>So, the answer is: <b>A (Stella Pachidi)</b>"
+  },
+  "c16-37": {
+    "explanation": "<h4>Question 37</h4><b>AI's potential has parallels with cultural shifts in previous eras.</b><br><br><b>Keywords:</b> AI's potential, transform, people's lives, parallels, major cultural shifts, previous eras<br><br>In paragraph 14 (Ewan McGaughey): 'Just as the industrial revolution brought people past subsistence agriculture, and the corporate revolution enabled mass production, a third revolution has been pronounced.' Just as = parallels, industrial/corporate revolutions = previous eras.<br><br>So, the answer is: <b>C (Ewan McGaughey)</b>"
+  },
+  "c16-38": {
+    "explanation": "<h4>Question 38</h4><b>It is important to be aware of the range of problems that AI causes.</b><br><br><b>Keywords:</b> important, to be aware, range of problems, AI causes<br><br>In paragraph 4, line 1 (Stella Pachidi): '“But these enhancements are not without consequences,” says Pachidi.' consequences = range of problems.<br><br>So, the answer is: <b>A (Stella Pachidi)</b>"
+  },
+  "c16-39": {
+    "explanation": "<h4>Question 39</h4><b>People are going to follow a less conventional career path than in the past.</b><br><br><b>Keywords:</b> people, follow, less conventional career path, than, past<br><br>In paragraph 9, lines 2-3 (Hamish Low): '“The traditional trajectory of full-time education followed by full-time work followed by a pensioned retirement is a thing of the past,” says Low.'<br><br>So, the answer is: <b>B (Hamish Low)</b>"
+  },
+  "c16-40": {
+    "explanation": "<h4>Question 40</h4><b>Authorities should ensure adequately paid work for everyone.</b><br><br><b>Keywords:</b> authorities, should take measures, ensure, will be, adequately paid work, everyone<br><br>In paragraph 13, line 1 (Ewan McGaughey): '“If there is going to be change to jobs... then I’d like to see governments seizing the opportunity to improve policy to enforce good job security... guarantee full employment, fair incomes...”' governments = authorities, good job security/fair incomes = adequately paid work.<br><br>So, the answer is: <b>C (Ewan McGaughey)</b>"
   }
 };

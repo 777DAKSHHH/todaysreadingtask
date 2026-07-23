@@ -1,124 +1,352 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>IELTS Reading Practice</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>IELTS Prep - Dashboard</title>
+  <meta name="description" content="Master your IELTS Reading exam with premium practice materials, detailed explanations, and progress tracking.">
+  <meta name="keywords" content="IELTS, IELTS reading, IELTS practice, Cambridge IELTS">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: College
-  * Template URL: https://bootstrapmade.com/college-bootstrap-education-template/
-  * Updated: Jun 19 2025 with Bootstrap v5.3.6
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Custom Dashboard CSS -->
+  <link href="assets/css/dashboard.css" rel="stylesheet">
 </head>
 
-<body class="index-page">
+<body>
 
+  <!-- Theme Init Script (avoids flashing) -->
+  <script>
+    const savedTheme = localStorage.getItem('ielts-prep-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+
+  <!-- Header -->
   <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
-
+    <div class="header-container container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
         <h1 class="sitename">IELTS Prep</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
+      <nav id="navmenu" class="navmenu d-flex align-items-center">
+        <ul class="d-flex list-unstyled m-0 align-items-center gap-3">
+          <li><a href="index.html" class="active">Dashboard</a></li>
           <li><a href="reading.html">Reading Practice</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        <div class="theme-switch-wrapper">
+          <button id="theme-toggle" class="theme-switch" aria-label="Toggle dark mode">
+            <i class="bi bi-moon-fill" id="theme-toggle-icon"></i>
+          </button>
+        </div>
       </nav>
-
     </div>
   </header>
 
-  <main class="main">
+  <main class="main flex-grow-1">
+    <div class="dashboard-container">
+      
+      <!-- Welcome Banner -->
+      <div class="welcome-banner" data-aos="fade-up">
+        <h2>Welcome back to your IELTS practice portal</h2>
+        <p class="text-secondary mb-0 mt-2">Track your scores, practice timed reading tests, and study detailed answer explanations to boost your score to a Band 9.0.</p>
+      </div>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section" style="padding: 120px 0;">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-lg-8 mx-auto" data-aos="fade-up">
-            <h1>Master Your IELTS Reading</h1>
-            <p class="lead mt-3">Practice with real test materials and get instant answers and detailed explanations to boost your score.</p>
-            <div class="d-flex justify-content-center gap-2 mt-4">
-              <a href="reading.html" class="btn btn-primary btn-lg">Start Practice Test</a>
+      <!-- Stats Grid -->
+      <div class="stats-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="bi bi-journal-check"></i>
+          </div>
+          <div>
+            <div class="stat-value" id="stats-attempted">0</div>
+            <div class="stat-label">Tests Attempted</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon success">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+          <div>
+            <div class="stat-value" id="stats-avg-band">0.0</div>
+            <div class="stat-label">Avg. Band Score</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);">
+            <i class="bi bi-trophy"></i>
+          </div>
+          <div>
+            <div class="stat-value" id="stats-highest-band">0.0</div>
+            <div class="stat-label">Highest Band</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background: rgba(239, 68, 68, 0.1); color: var(--danger);">
+            <i class="bi bi-hourglass-split"></i>
+          </div>
+          <div>
+            <div class="stat-value" id="stats-time">0m</div>
+            <div class="stat-label">Practice Time</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Practice Tests -->
+      <h3 class="section-title" data-aos="fade-up" data-aos-delay="200">
+        <i class="bi bi-card-list text-primary"></i> Available Practice Tests
+      </h3>
+      <div class="test-grid" data-aos="fade-up" data-aos-delay="250">
+        
+        <!-- CAM 6 Test 2 -->
+        <div class="test-card">
+          <div class="test-card-header">
+            <span class="test-badge badge-blue">Cambridge IELTS 6</span>
+            <h4 class="test-card-title">Academic Reading Test 2</h4>
+          </div>
+          <div class="test-card-body">
+            <p class="test-card-desc">Practice three challenging passages covering Public Transport, the Greying Population, and early Numeration systems.</p>
+            <div class="test-meta">
+              <span><i class="bi bi-file-text"></i> 3 Passages</span>
+              <span><i class="bi bi-question-circle"></i> 40 Questions</span>
+              <span><i class="bi bi-clock"></i> 60 Mins</span>
             </div>
           </div>
-        </div>
-      </div>
-    </section><!-- /Hero Section -->
-
-  </main>
-
-  <footer id="footer" class="footer position-relative light-background">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-12 footer-about text-center">
-          <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-            <span class="sitename">IELTS Prep</span>
-          </a>
-          <div class="social-links d-flex mt-4 justify-content-center">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+          <div class="test-card-footer">
+            <button onclick="startPractice('cam6')" class="btn-premium">
+              Start Practice <i class="bi bi-arrow-right"></i>
+            </button>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">IELTS Prep</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
+        <!-- IELTS on Track Test 2 -->
+        <div class="test-card">
+          <div class="test-card-header">
+            <span class="test-badge badge-blue">IELTS On Track</span>
+            <h4 class="test-card-title">Academic Reading Test 2</h4>
+          </div>
+          <div class="test-card-body">
+            <p class="test-card-desc">Read and analyze articles covering consumer phone-hold music, history of industrialization via tea and beer, and team-based learning benefits.</p>
+            <div class="test-meta">
+              <span><i class="bi bi-file-text"></i> 3 Passages</span>
+              <span><i class="bi bi-question-circle"></i> 40 Questions</span>
+              <span><i class="bi bi-clock"></i> 60 Mins</span>
+            </div>
+          </div>
+          <div class="test-card-footer">
+            <button onclick="startPractice('ontrack')" class="btn-premium">
+              Start Practice <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
 
+        <!-- CAM 16 Test 1 -->
+        <div class="test-card">
+          <div class="test-card-header">
+            <span class="test-badge badge-green">NEW • Cambridge 16</span>
+            <h4 class="test-card-title">Academic Reading Test 1</h4>
+          </div>
+          <div class="test-card-body">
+            <p class="test-card-desc">Tackle recent exam questions on Polar Bear conservation, Djoser's Step Pyramid in Saqqara, and the future of work under automation.</p>
+            <div class="test-meta">
+              <span><i class="bi bi-file-text"></i> 3 Passages</span>
+              <span><i class="bi bi-question-circle"></i> 40 Questions</span>
+              <span><i class="bi bi-clock"></i> 60 Mins</span>
+            </div>
+          </div>
+          <div class="test-card-footer">
+            <button onclick="startPractice('cam16')" class="btn-premium">
+              Start Practice <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Section: Attempt History -->
+      <div class="history-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+          <h3 class="section-title m-0">
+            <i class="bi bi-clock-history text-primary"></i> Practice Attempt History
+          </h3>
+          <button id="btn-reset-data" class="btn btn-sm btn-outline-danger d-none">
+            <i class="bi bi-trash"></i> Reset Practice Progress
+          </button>
+        </div>
+        
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead>
+              <tr>
+                <th>Test Title</th>
+                <th>Mode</th>
+                <th>Score</th>
+                <th>Band</th>
+                <th>Date / Time</th>
+                <th>Time Spent</th>
+              </tr>
+            </thead>
+            <tbody id="history-table-body">
+              <tr>
+                <td colspan="6" class="text-center text-muted py-4">
+                  <i class="bi bi-info-circle me-1"></i> No practice sessions recorded yet. Start a practice test to see your history!
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="footer" class="footer py-4 mt-auto">
+    <div class="container text-center">
+      <p class="mb-0">© 2026 <strong>IELTS Prep</strong>. All practice materials belong to their respective copyright holders.</p>
+    </div>
   </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <!-- Dashboard Initialization Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize Animations
+      AOS.init({
+        duration: 600,
+        easing: 'ease-in-out',
+        once: true
+      });
 
+      // --- Theme Toggle Logic ---
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeToggleIcon = document.getElementById('theme-toggle-icon');
+
+      function updateThemeIcon(theme) {
+        if (theme === 'dark') {
+          themeToggleIcon.className = 'bi bi-sun-fill';
+        } else {
+          themeToggleIcon.className = 'bi bi-moon-fill';
+        }
+      }
+
+      // Initial Theme setup
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      updateThemeIcon(currentTheme);
+
+      themeToggle.addEventListener('click', () => {
+        const activeTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('ielts-prep-theme', newTheme);
+        updateThemeIcon(newTheme);
+      });
+
+      // --- Load Progress Stats ---
+      const attempts = JSON.parse(localStorage.getItem('ielts-attempts') || '[]');
+      
+      if (attempts.length > 0) {
+        document.getElementById('btn-reset-data').classList.remove('d-none');
+        
+        // Compute stats
+        const attemptedCount = attempts.length;
+        let scoreSum = 0;
+        let highestBand = 0;
+        let timeSumSeconds = 0;
+        
+        attempts.forEach(item => {
+          scoreSum += parseFloat(item.band);
+          if (parseFloat(item.band) > highestBand) {
+            highestBand = parseFloat(item.band);
+          }
+          timeSumSeconds += item.timeSpentSeconds || 0;
+        });
+
+        const avgBand = (scoreSum / attemptedCount).toFixed(1);
+        const totalMinutes = Math.round(timeSumSeconds / 60);
+
+        document.getElementById('stats-attempted').textContent = attemptedCount;
+        document.getElementById('stats-avg-band').textContent = avgBand;
+        document.getElementById('stats-highest-band').textContent = highestBand.toFixed(1);
+        document.getElementById('stats-time').textContent = totalMinutes + 'm';
+
+        // Render table
+        const tbody = document.getElementById('history-table-body');
+        tbody.innerHTML = '';
+
+        // Sort attempts by date descending
+        attempts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        attempts.forEach(item => {
+          const tr = document.createElement('tr');
+          
+          let bandClass = 'bg-secondary';
+          const bandNum = parseFloat(item.band);
+          if (bandNum >= 8.0) bandClass = 'bg-success text-white';
+          else if (bandNum >= 7.0) bandClass = 'bg-primary text-white';
+          else if (bandNum >= 6.0) bandClass = 'bg-warning text-dark';
+          else if (bandNum > 0) bandClass = 'bg-danger text-white';
+
+          const formattedDate = new Date(item.date).toLocaleString([], {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+          });
+
+          const timeSpentFormatted = item.timeSpentSeconds 
+            ? `${Math.floor(item.timeSpentSeconds / 60)}m ${item.timeSpentSeconds % 60}s`
+            : 'N/A';
+
+          tr.innerHTML = `
+            <td><strong>${getTestDisplayName(item.testId)}</strong></td>
+            <td><span class="badge ${item.mode === 'exam' ? 'bg-danger' : 'bg-info'}">${item.mode.toUpperCase()}</span></td>
+            <td>${item.score} / 40</td>
+            <td><span class="badge badge-score ${bandClass}">Band ${parseFloat(item.band).toFixed(1)}</span></td>
+            <td>${formattedDate}</td>
+            <td>${timeSpentFormatted}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      // Reset Data Click Handler
+      document.getElementById('btn-reset-data').addEventListener('click', () => {
+        if (confirm('Are you sure you want to reset all your practice progress and score history? This cannot be undone.')) {
+          localStorage.removeItem('ielts-attempts');
+          window.location.reload();
+        }
+      });
+    });
+
+    function getTestDisplayName(id) {
+      const names = {
+        'cam6': 'CAM 6 Test 2',
+        'ontrack': 'IELTS On Track Test 2',
+        'cam16': 'CAM 16 Test 1'
+      };
+      return names[id] || id;
+    }
+
+    function startPractice(testId) {
+      localStorage.setItem('ielts-selected-test', testId);
+      window.location.href = 'reading.html';
+    }
+  </script>
 </body>
 
 </html>
